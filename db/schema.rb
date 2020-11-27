@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_27_042643) do
+ActiveRecord::Schema.define(version: 2020_11_27_233049) do
 
   create_table "courses", force: :cascade do |t|
     t.string "name"
@@ -22,9 +22,13 @@ ActiveRecord::Schema.define(version: 2020_11_27_042643) do
     t.date "date"
     t.date "close_date"
     t.string "title"
-    t.integer "section_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "presentations_users", id: false, force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "presentation_id", null: false
   end
 
   create_table "presents", force: :cascade do |t|
@@ -43,6 +47,15 @@ ActiveRecord::Schema.define(version: 2020_11_27_042643) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "section_presentations", force: :cascade do |t|
+    t.integer "section_id", null: false
+    t.integer "presentation_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["presentation_id"], name: "index_section_presentations_on_presentation_id"
+    t.index ["section_id"], name: "index_section_presentations_on_section_id"
+  end
+
   create_table "sections", force: :cascade do |t|
     t.integer "section_number"
     t.time "time"
@@ -57,7 +70,6 @@ ActiveRecord::Schema.define(version: 2020_11_27_042643) do
     t.string "username"
     t.string "password"
     t.integer "section_id"
-    t.string "course_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

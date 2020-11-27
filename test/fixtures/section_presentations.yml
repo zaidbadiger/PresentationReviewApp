@@ -1,9 +1,9 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  user: one
+  section: one
   presentation: one
 
 two:
-  user: two
+  section: two
   presentation: two
