@@ -1,0 +1,26 @@
+// Place all the styles related to the StaticPages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+@import 'bootstrap';
+
+body {
+    background-color: whitesmoke;
+}
+
+.home-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.jumbotron {
+    text-align: center;
+    background-color: cornflowerblue;
+    color: white;
+}
+
+button {
+    background-color: white;
+    color: cornflowerblue;
+}
