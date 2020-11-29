@@ -4,10 +4,10 @@
 @import 'bootstrap';
 
 body {
-    background-color: whitesmoke;
+    background-color: cornflowerblue;
 }
 
-.home-container {
+.full-container {
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -21,6 +21,35 @@ body {
 }
 
 button {
-    background-color: white;
+    background-color: cornflowerblue;
+    color: white;
+    &:hover {
+        border: 2px solid black;
+    }
+    &[type="submit"] {
+        margin-top: 1em;
+    }
+}
+
+#log-in-form {
+    padding: 2rem;
+    padding-top: 0rem;
+}
+
+.form-group {
+    text-align: left;
+}
+
+.card {
     color: cornflowerblue;
+}
+
+.btn-group.special {
+    display: flex;
+    margin-bottom: 16px;
+}
+
+.special .btn {
+    flex: 1;
+    background-color: cornflowerblue;
 }
