@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class SectionPresentationTest < ActiveSupport::TestCase
+class RosterTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

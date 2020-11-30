@@ -1,7 +1,8 @@
 class Section < ApplicationRecord
-  has_many :section_presentations
-  has_many :presentations, through: :sections_presentations
+  has_many :rosters
+  has_many :users, through: :rosters
+
+  has_many :presentations
 
   belongs_to :course
-  has_many :users
 end
