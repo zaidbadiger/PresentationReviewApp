@@ -28,13 +28,6 @@ ActiveRecord::Schema.define(version: 2020_11_30_183712) do
     t.integer "section_id"
   end
 
-  create_table "presents", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "presentation_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "reviews", force: :cascade do |t|
     t.integer "user_id"
     t.integer "presentation_id"
