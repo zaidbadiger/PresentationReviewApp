@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :rosters
+  resources :reviews
+  resources :presents
+  resources :presentations
+  resources :sections
+  resources :users
   root 'static_pages#home'
   get 'static_pages/login'
   get 'static_pages/signup'

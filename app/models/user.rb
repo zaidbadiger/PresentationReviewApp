@@ -6,5 +6,6 @@ class User < ApplicationRecord
   has_many :sections, through: :rosters
 
   belongs_to :section
+
   has_many :reviews
 end

@@ -2,10 +2,12 @@
 
 one:
   section_number: 1
-  time: 2020-11-26 23:22:47
-  course_id: MyString
+  time: 2020-11-30 19:32:08
+  course_id: 1
+  section_type: MyString
 
 two:
   section_number: 1
-  time: 2020-11-26 23:22:47
-  course_id: MyString
+  time: 2020-11-30 19:32:08
+  course_id: 1
+  section_type: MyString

@@ -1,13 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  date: 2020-11-26
-  close_date: 2020-11-26
-  title: MyString
   section_id: 1
+  date: 2020-11-30
+  close_date: 2020-11-30
+  title: MyString
 
 two:
-  date: 2020-11-26
-  close_date: 2020-11-26
-  title: MyString
   section_id: 1
+  date: 2020-11-30
+  close_date: 2020-11-30
+  title: MyString

@@ -1,4 +1,4 @@
-class Roster < ApplicationRecord
-    belongs_to :user
-    belongs_to :section
+class Roster < ApplicationRecord    
+  belongs_to :user
+  belongs_to :section
 end
