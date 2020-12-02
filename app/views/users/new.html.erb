@@ -4,6 +4,10 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_with(model: @user, local: true) do |f| %>
+
+      <%= puts @user%>
+      <%= puts "here" %>
+
       <%= render 'shared/error_messages' %>
 
       <%= f.label :name %>
@@ -18,8 +22,17 @@
       <%= f.label :password_confirmation, "Confirmation" %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
 
-      <%= f.label :is_instructor, "I'm an Instructor" %>
-      <%= f.check_box :is_instructor, class: 'form-control'%>
+      
+      Select if you are student or instructor
+
+      <%= f.select(:is_instructor) do %>
+        <% [['Student', 'False'], ['Instructor', 'True']].each do |c| %>
+          <%= content_tag(:option, c.first, value: c.last) %>
+        <% end %>
+      <% end %>
+
+
+      <%= f.select(:is_instructor, [['Student', 'False'], ['Instructor', 'True']]) %>
 
       <%= f.submit "Create my account", class: "btn btn-primary" %>
     <% end %>

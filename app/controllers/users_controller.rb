@@ -10,6 +10,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    puts "This is content"
     if @user.save
       # Handle a successful save.
       flash[:success] = "Welcome to the Sample App!"
@@ -23,7 +24,7 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:name, :email, :password,
-                                   :password_confirmation)
+                                   :password_confirmation, :is_instructor)
     end
 
 
