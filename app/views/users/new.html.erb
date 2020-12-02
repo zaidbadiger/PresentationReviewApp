@@ -23,7 +23,7 @@
       <%= f.password_field :password_confirmation, class: 'form-control' %>
 
       <%= f.label :is_instructor, "Select if you are a Student or Instructor" %>
-      <%= f.select(:is_instructor, [['Student', 'False'], ['Instructor', 'True']]) %>
+      <%= f.select(:is_instructor, [['Student', false], ['Instructor', true]]) %>
       
       <%= f.submit "Create my account", class: "btn btn-primary" %>
     <% end %>
