@@ -22,18 +22,9 @@
       <%= f.label :password_confirmation, "Confirmation" %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
 
-      
-      Select if you are student or instructor
-
-      <%= f.select(:is_instructor) do %>
-        <% [['Student', 'False'], ['Instructor', 'True']].each do |c| %>
-          <%= content_tag(:option, c.first, value: c.last) %>
-        <% end %>
-      <% end %>
-
-
+      <%= f.label :is_instructor, "Select if you are a Student or Instructor" %>
       <%= f.select(:is_instructor, [['Student', 'False'], ['Instructor', 'True']]) %>
-
+      
       <%= f.submit "Create my account", class: "btn btn-primary" %>
     <% end %>
   </div>
