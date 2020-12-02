@@ -18,6 +18,9 @@
       <%= f.label :password_confirmation, "Confirmation" %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
 
+      <%= f.label :is_instructor, "I'm an Instructor" %>
+      <%= f.check_box :is_instructor, class: 'form-control'%>
+
       <%= f.submit "Create my account", class: "btn btn-primary" %>
     <% end %>
   </div>
