@@ -5,15 +5,15 @@ class CoursesController < ApplicationController
 
   def create
     @course = current_user.courses.build(course_params)
+    @course.save
     redirect_to current_user
-
   end
 
 
   private
 
-    def user_params
-      params.require(:user).permit(:name)
+    def course_params
+      params.permit(:name)
     end
 
 end
