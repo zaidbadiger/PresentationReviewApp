@@ -11,7 +11,8 @@
       <ul>
       <% course.sections.each do |section| %>
        
-        <%=section.section_number%>
+        <div>Section <%=section.section_number%></div>
+        <%= link_to "Add Students", "/courses/"+course.id.to_s%>
         
       <%end%>
       </ul>

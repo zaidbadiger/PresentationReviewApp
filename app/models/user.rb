@@ -8,4 +8,6 @@ class User < ApplicationRecord
     has_secure_password
     #validates :password, presence: true, length: { minimum: 6 }
     has_many :courses
+    has_many :rosters
+    has_many :sections, through: :rosters
   end
