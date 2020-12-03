@@ -6,10 +6,15 @@
 <div>
   <ul>
     <% @user.courses.each do |course| %>
+      <li>number of sections for <%=course.name%> is <%=course.sections.count%></li>
       <li> <%= course.name %> </li>
+      <ul>
       <% course.sections.each do |section| %>
+       
         <%=section.section_number%>
+        
       <%end%>
+      </ul>
       <%= link_to "Add Section", "/courses/"+course.id.to_s%>
       <% end %>
   </ul>
