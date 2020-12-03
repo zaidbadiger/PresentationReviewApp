@@ -7,9 +7,10 @@
   <ul>
     <% @user.courses.each do |course| %>
       <li> <%= course.name %> </li>
-      <div>
-      
-      </div>
+      <% course.sections.each do |section| %>
+        <%=section.section_number%>
+      <%end%>
+      <%= link_to "Add Section", "/courses/"+course.id.to_s%>
       <% end %>
   </ul>
 </div>

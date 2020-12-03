@@ -3,6 +3,9 @@ class CoursesController < ApplicationController
     @course = current_user.courses.build
   end
 
+  def show
+  end
+
   def create
     @course = current_user.courses.build(course_params)
     @course.save

@@ -1,0 +1,12 @@
+<h1>Sections#new</h1>
+<p>Find me in app/views/sections/new.html.erb</p>
+
+
+<h1><%=@section%></h1>
+<h1><%=Course.find(params[:id]).name%>
+
+
+<%= form_with model: @section, local: true do |f| %>
+    <%= f.label :section_number %>
+    <%= f.number_field :section_number, class: 'form-control' %>
+<% end %>

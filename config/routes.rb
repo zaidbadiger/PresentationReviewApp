@@ -5,9 +5,11 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
   post   '/users/:id', to: 'courses#create'
+  post  '/courses/:id', to: 'sections#create'
   get 'sessions/new'
   
   
   resources :users
   resources :courses
+
 end
