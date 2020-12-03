@@ -7,12 +7,19 @@
   <ul>
     <% @user.courses.each do |course| %>
       <li>number of sections for <%=course.name%> is <%=course.sections.count%></li>
-      <li> <%= course.name %> </li>
+      <div> <%= course.name %> </div>
       <ul>
       <% course.sections.each do |section| %>
        
         <div>Section <%=section.section_number%></div>
-        <%= link_to "Add Students", "/courses/"+course.id.to_s%>
+
+        <%section.users.each do |user|%>
+          <div><%=user.email%></div>
+        <%end%>
+
+        <%= link_to "Add Students", "/courses/"+course.id.to_s+"/sections/"+section.id.to_s%>
+
+        
         
       <%end%>
       </ul>

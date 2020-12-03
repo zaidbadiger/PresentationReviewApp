@@ -1,9 +1,14 @@
 class SectionsController < ApplicationController
-  before_action :set_section
+ 
 
   def new
     @section = Course.find(params[:id]).sections.build()
     
+  end
+
+  def show
+    @user = current_user
+    render 'show'
   end
 
   def create
@@ -19,8 +24,6 @@ class SectionsController < ApplicationController
       params.permit(:section_number)
     end
 
-    def set_section
-      @section = Course.find(params[:id]).sections.build()
-    end
+  
 
 end
