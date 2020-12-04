@@ -1,22 +1,25 @@
 class CoursesController < ApplicationController
   def new
-    @course = current_user.courses.build
+    @course = Course.new
+    @user = current_user
   end
 
   def show
   end
 
   def create
-    @course = current_user.courses.build(course_params)
+    @course = Course.new(course_params)
+    puts course_params
     @course.save
     redirect_to current_user
   end
 
-
   private
 
     def course_params
-      params.permit(:name)
+      result = params.require(:course).permit(:name)
+      result[:user_id] = current_user.id
+      result
     end
 
 end

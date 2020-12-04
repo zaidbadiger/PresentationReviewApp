@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
-  post   '/users/:id', to: 'courses#create'
+  post   '/courses/new', to: 'courses#create'
   post  '/courses/:id', to: 'sections#create'
   get '/courses/:id/sections/:id', to:'sections#show'
   post '/courses/:id/sections/:id', to:'section_student#create'

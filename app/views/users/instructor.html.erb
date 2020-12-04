@@ -1,49 +1,51 @@
-<h1>Instructor<h1>
+<h1>Instructor: <%= @user.name %><h1>
 
-<h1>Add Course</h1>
+<h1><%= link_to "Add Course", "/courses/new" %></h1>
 
-<%=@val%>
-<div>
-  <ul>
-    <% @user.courses.each do |course| %>
-      <li>number of sections for <%=course.name%> is <%=course.sections.count%></li>
-      <div> <%= course.name %> </div>
-      <ul>
-      <% course.sections.each do |section| %>
-       
-        <div>Section <%=section.section_number%></div>
-
-        <%section.users.each do |user|%>
-          <div><%=user.email%></div>
-        <%end%>
-        <div> <%= link_to "Add Students", "/courses/"+course.id.to_s+"/sections/"+section.id.to_s%> </div>
-        <%section.presentations.each do |presentation|%>
-          <div><%=presentation.title%>  <%=link_to "Add Group Member", "/sections/"+section.id.to_s+"/presentations/"+presentation.id.to_s%> </div>
-          <%presentation.users.each do |user|%>
-            <div><%=user.name%>  <%=user.email%> </div>
-          <%end%>
-        <%end%>
-        <div> <%= link_to "Add Presentation", "/courses/"+course.id.to_s+"/sections/"+section.id.to_s+"/presentations/" + section.id.to_s%> </div>
-
-        
-        
-      <%end%>
-      </ul>
-      <%= link_to "Add Section", "/courses/"+course.id.to_s%>
-      <% end %>
-  </ul>
+<div id="accordion" class="course-box">
+  <% @user.courses.each do |course| %>
+    <div class="card">
+      <div class="card-header" id=<%= "\"heading#{course.id}\""%>>
+        <h5 class="mb-0">
+          <button class="btn btn-link" data-toggle="collapse" data-target=<%= "\"#collapse#{course.id}\""%> aria-expanded="true" aria-controls=<%= "\"collapse#{course.id}\""%>>
+            <%= "Course: #{course.name}" %>
+          </button>
+        </h5>
+      </div>
+      <div id=<%= "\"collapse#{course.id}\""%> class="collapse" aria-labelledby=<%= "\"heading#{course.id}\""%> data-parent="#accordion">
+        <div class="card-body">
+          <div id=<%= "\"accordion#{course.id}\""%>>
+            <% course.sections.each do |section| %>
+              <div class="card">
+                <div class="card-header" id=<%= "\"heading#{course.id}S:#{section.id}\""%>>
+                  <h2 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="<%= "\"#collapse#{course.id}S:#{section.id}\""%> aria-expanded="true" aria-controls=<%= "\"collapse#{course.id}S:#{section.id}\""%>>
+                      <%= "Section: #{section.section_number}"%>
+                    </button>
+                    <%= link_to "Add Presentation", "/courses/#{course.id}/sections/#{section.id}/presentations/#{section.id}" %>
+                  </h2>
+                </div>
+                <div id=<%= "\"collapse#{course.id}S:#{section.id}\""%> class="collapse" aria-labelledby=<%= "\"heading#{course.id}S:#{section.id}\""%> data-parent=<%= "\"#accordion#{course.id}\""%>>
+                  <div class="card-body">
+                    <table class="table table-hover">
+                      <tbody>
+                        <% section.presentations.each do |presentation| %>
+                          <tr>
+                            <th scope="row"><%= "Presentation: #{presentation.title}"%></th>
+                            <td><a class="btn btn-primary" href="#" role="button">Edit</a></td>
+                            <td><a class="btn btn-primary" href="#" role="button">Reviews</a></td>
+                            <td><a class="btn btn-primary" href="#" role="button">Delete</a></td>
+                          </tr>
+                        <% end %>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
 </div>
-
-
-<div class="col-md-6 col-md-offset-3">
-    <%= form_with(model: @course, local: true) do |f| %>
-
-      <%= render 'shared/error_messages' %>
-
-      <%= f.label :name %>
-      <%= f.text_field :name, class: 'form-control' %>
-      <%= f.submit "Create my course", class: "btn btn-primary" %>
-    <% end %>
-  </div>
-
-
