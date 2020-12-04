@@ -1,19 +1,37 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container">
-    <%= link_to "CATYOU", root_path, id: "logo" %>
-    <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home", root_path %></li>
-        <%= puts logged_in? %>
-        <% if logged_in? %>
-          <li><%= link_to "Log out", logout_path, method: "delete" %></li>
-          <li><%= link_to "Users", "#" %></li>
-      </ul>
-          </li>
-        <% else %>
-          <li><%= link_to "Log in", login_path %></li>
-        <% end %>
-      </ul>
-    </nav>
+<header class="navbar-fixed-top">
+  <!--<div class="container">-->
+  <!--  <%= link_to "CATYOU", root_path, id: "logo" %>-->
+  <!--  <nav>-->
+  <!--    <ul class="nav navbar-nav navbar-right">-->
+  <!--      <li><%= link_to "Home", root_path %></li>-->
+  <!--      <%= puts logged_in? %>-->
+  <!--      <% if logged_in? %>-->
+  <!--        <li><%= link_to "Log out", logout_path, method: "delete" %></li>-->
+  <!--        <li><%= link_to "Users", "#" %></li>-->
+  <!--    </ul>-->
+  <!--        </li>-->
+  <!--      <% else %>-->
+  <!--        <li><%= link_to "Log in", login_path %></li>-->
+  <!--      <% end %>-->
+  <!--    </ul>-->
+  <!--  </nav>-->
+  <!--</div>-->
+  
+  <div class="card container-fluid header">
+    <div class="row">
+        <div class="card-title col-md-4">
+          <a href="#" class="display-4">CATMENOT</a>
+        </div>
+        <div class="col-md-8 float-right header-buttons">
+          <%= puts logged_in? %>
+          <% if logged_in? %>
+            <%= link_to "Log out", logout_path, {class: "btn btn-lg btn-primary"}, method: "delete" %>
+            <%= link_to "Users", "#", {class: "btn btn-lg btn-primary"} %>
+          <% else %>
+            <%= link_to "Log in", login_path, {class: "btn btn-lg btn-primary"} %>
+          <% end %>
+        </div>
+    </div>
   </div>
+  
 </header>

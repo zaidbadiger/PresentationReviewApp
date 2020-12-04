@@ -1,50 +1,120 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+
+$main-color: LightCoral;
+$hover-color: IndianRed;
+
 body {
-    padding-top: 60px;
-    }
+  padding-top: 60px;
+  background-color: $main-color;
+}
+
+.full-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-title {
+  margin: 0px;
+}
+
+.header-buttons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  
+  .btn {
+    margin-left: 1rem;
+  }
+}
+
+button, .btn {
+    background-color: $main-color;
+    color: white;
+    border: none;
     
+    &:hover {
+        background-color: $hover-color;
+    }
+    &[type="submit"] {
+        margin-top: 1em;
+    }
+}
+
+.btn-link {
+    color: $main-color;
+    background-color: inherit;
+    
+    
+    &:hover {
+        background-color: inherit;
+    }
+}
+
+.btn-group.special {
+    display: flex;
+    margin-bottom: 16px;
+}
+
+a {
+    color: $main-color;
+    &:hover {
+        color: $main-color;
+    }
+}
+
+.header {
+  margin: 0px;
+  padding: 2rem;
+  background-color: #EEE;
+}
+
+.main-color {
+  color: $main-color;
+}
+
 section {
-overflow: auto;
-
+  overflow: auto;
 }
+
 textarea {
-resize: vertical;
+  resize: vertical;
 }
+
 .center {
-text-align: center;
-
+  text-align: center;
 }
-.center h1 {
-margin-bottom: 10px;
 
+
+.center h1 {
+  margin-bottom: 10px;
 }
 
 /* forms */
-input, textarea, select, .uneditable-input {
-    border: 1px solid #bbb;
-    width: 100%;
-    margin-bottom: 15px;
-    
-  }
-  
-  input {
-    height: auto !important;
-  }
+// input, textarea, select, .uneditable-input {
+//   border: 1px solid #bbb;
+//   width: 100%;
+//   margin-bottom: 15px;
+// }
 
-  #error_explanation {
+input {
+  height: auto !important;
+}
+
+#error_explanation {
+  color: red;
+  ul {
     color: red;
-    ul {
-      color: red;
-      margin: 0 0 30px 0;
-    }
+    margin: 0 0 30px 0;
   }
+}
   
-  .field_with_errors {
-    @extend .has-error;
-    .form-control {
-      color: $state-danger-text;
-    }
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
   }
-
+}
