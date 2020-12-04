@@ -17,7 +17,10 @@
           <div><%=user.email%></div>
         <%end%>
         <div> <%= link_to "Add Students", "/courses/"+course.id.to_s+"/sections/"+section.id.to_s%> </div>
-        <div> <%= link_to "Add Presentation", "/courses/"+course.id.to_s+"/sections/"+section.id.to_s+"/presentation/"%> </div>
+        <%section.presentations.each do |present|%>
+          <div><%=present.title%></div>
+        <%end%>
+        <div> <%= link_to "Add Presentation", "/courses/"+course.id.to_s+"/sections/"+section.id.to_s+"/presentations/" + section.id.to_s%> </div>
 
         
         

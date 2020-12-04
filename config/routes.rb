@@ -10,8 +10,8 @@ Rails.application.routes.draw do
   post  '/courses/:id', to: 'sections#create'
   get '/courses/:id/sections/:id', to:'sections#show'
   post '/courses/:id/sections/:id', to:'section_student#create'
-  get '/courses/:id/sections/:id/presentation', to:'presentations#new'
-  post '/courses/:id/sections/:id/presentation', to:'presentations#create'
+  get '/courses/:id/sections/:id/presentations/:id', to:'presentations#show'
+  post '/courses/:id/sections/:id/presentations/:id', to:'presentations#create'
 
 
   get 'sessions/new'

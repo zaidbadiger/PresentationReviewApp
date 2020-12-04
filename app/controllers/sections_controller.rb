@@ -1,6 +1,5 @@
 class SectionsController < ApplicationController
  
-
   def new
     @section = Course.find(params[:id]).sections.build
   end
@@ -9,14 +8,12 @@ class SectionsController < ApplicationController
     @user = current_user
     render 'show'
   end
-
-  def create
-    
+  
+  def create  
     @section = Course.find(params[:id]).sections.build(sections_params)
     @section.save
     redirect_to current_user
   end
-
 
   private
     def sections_params
