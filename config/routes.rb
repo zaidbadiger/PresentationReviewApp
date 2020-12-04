@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   post  '/courses/:id', to: 'sections#create'
   get '/courses/:id/sections/:id', to:'sections#show'
   post '/courses/:id/sections/:id', to:'section_student#create'
+  get '/courses/:id/sections/:id/presentation', to:'presentations#new'
+  post '/courses/:id/sections/:id/presentation', to:'presentations#create'
+
 
   get 'sessions/new'
   
@@ -17,5 +20,6 @@ Rails.application.routes.draw do
   resources :users
   resources :courses
   resources :sections
+  resources :presentations
 
 end

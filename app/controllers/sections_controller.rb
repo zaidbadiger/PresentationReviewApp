@@ -2,8 +2,7 @@ class SectionsController < ApplicationController
  
 
   def new
-    @section = Course.find(params[:id]).sections.build()
-    
+    @section = Course.find(params[:id]).sections.build
   end
 
   def show

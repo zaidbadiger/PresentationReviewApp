@@ -16,8 +16,8 @@
         <%section.users.each do |user|%>
           <div><%=user.email%></div>
         <%end%>
-
-        <%= link_to "Add Students", "/courses/"+course.id.to_s+"/sections/"+section.id.to_s%>
+        <div> <%= link_to "Add Students", "/courses/"+course.id.to_s+"/sections/"+section.id.to_s%> </div>
+        <div> <%= link_to "Add Presentation", "/courses/"+course.id.to_s+"/sections/"+section.id.to_s+"/presentation/"%> </div>
 
         
         
