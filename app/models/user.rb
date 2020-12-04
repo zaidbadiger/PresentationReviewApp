@@ -10,4 +10,6 @@ class User < ApplicationRecord
     has_many :courses
     has_many :rosters
     has_many :sections, through: :rosters
+    has_many :presenters
+    has_many :presentations, through: :presenters
   end

@@ -9,7 +9,7 @@ class PresentationsController < ApplicationController
   end
   
   def create
-    @presentation = Section.find(params[:id]).presentations.build(title:params[:title])
+    @presentation = Section.find(params[:id]).presentations.build(presentations_params)
     @presentation.save
     redirect_to current_user
   end
@@ -18,7 +18,7 @@ class PresentationsController < ApplicationController
 
   private
       def presentations_params
-        params.permit(:name)
+        params.permit(:title)
       end
 
 
