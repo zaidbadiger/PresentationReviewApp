@@ -25,7 +25,7 @@
         <div class="col-md-8 float-right header-buttons">
           <%= puts logged_in? %>
           <% if logged_in? %>
-            <%= link_to "Log out", logout_path, {class: "btn btn-lg btn-primary"}, method: "delete" %>
+            <%= link_to "Log out", logout_path, method: "delete", class: "btn btn-lg btn-primary" %>
             <%= link_to "Users", "#", {class: "btn btn-lg btn-primary"} %>
           <% else %>
             <%= link_to "Log in", login_path, {class: "btn btn-lg btn-primary"} %>
