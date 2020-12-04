@@ -1,12 +1,9 @@
 class SectionStudentController < ApplicationController
   def new
     @student = Section.find(params:id).users.build
-    
-    
   end
 
   def show
-    
     render 'show'
   end
 
@@ -18,13 +15,10 @@ class SectionStudentController < ApplicationController
     @student.save!
     puts @student.email
     redirect_to current_user
-
   end
 
   private
-
       def student_section_params
         params.permit(:email)
       end
-
 end
