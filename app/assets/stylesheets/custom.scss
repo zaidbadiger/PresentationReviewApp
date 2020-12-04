@@ -6,19 +6,14 @@ $main-color: LightCoral;
 $hover-color: IndianRed;
 
 body {
-  padding-top: 60px;
   background-color: $main-color;
 }
 
 .full-container {
-  min-height: 100vh;
+  min-height: 85vh;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.card-title {
-  margin: 0px;
 }
 
 .header-buttons {
@@ -59,12 +54,12 @@ button, .btn {
     margin-bottom: 16px;
 }
 
-a {
-    color: $main-color;
-    &:hover {
-        color: $main-color;
-    }
-}
+// a {
+//     color: $main-color;
+//     &:hover {
+//         color: $main-color;
+//     }
+// }
 
 .header {
   margin: 0px;
@@ -72,8 +67,20 @@ a {
   background-color: #EEE;
 }
 
-.main-color {
+.card {
   color: $main-color;
+}
+
+.card-title {
+  margin: 0px;
+}
+
+.new-user {
+  margin-top: 1rem;
+}
+
+.form {
+  background-color: whitesmoke;
 }
 
 section {
@@ -117,4 +124,9 @@ input {
   .form-control {
     color: $state-danger-text;
   }
+}
+
+hr.my-4 { 
+  border-color: $main-color;
+  margin-top: 1rem;
 }
