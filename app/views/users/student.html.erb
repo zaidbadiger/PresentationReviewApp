@@ -1,1 +1,58 @@
-<h1>Student</h1>
+ 
+   <div id="accordion" class="course-box">
+    <% @sections.each do |section| %>
+      <% pres_to_review, pres_with_feedback = split_pres(section) %>
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h2 class="mb-0">
+            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Course: <%=section.course.name%>
+            </button>
+          </h2>
+        </div>
+    
+        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+          <div class="card-body">
+            <table class="table table-hover">
+              <thead>
+                <th scope="col">Presentations to Review</th>
+                <th scope="col">Due Date</th>
+                <th scope="col">Action</th>
+              </thead>
+              <tbody>
+                  <% pres_to_review.each do |presentation| %>
+                    <tr>
+                      <th scope="row"> <%=presentation.title%> </th>
+                      <td>Dec 6th</td>
+                      <td><a class="btn btn-primary" href="#" role="button">Review</a></td>
+                    </tr>
+                  <%end%>
+              </tbody>
+            </table>
+            
+            <hr class="my-4">
+            
+            <table class="table table-hover">
+              <thead>
+                <th scope="col">Your Presentations</th>
+                <th scope="col">Date Presented</th>
+                <th scope="col">Feedback</th>
+              </thead>
+              <tbody>
+                <% pres_with_feedback.each do |presentation| %>
+                  <tr>
+                    <th scope="row"> <%=presentation.title%> </th>
+                    <td>Dec 6th</td>
+                    <td><a class="btn btn-primary" href="#" role="button">View Feedback</a></td>
+                  </tr>
+                <%end%>
+              </tbody>
+            </table>          
+            
+          </div>
+        </div>
+      </div>
+    <%end%>
+   </div>
+    
+   

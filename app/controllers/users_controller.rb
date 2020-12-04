@@ -7,6 +7,7 @@ class UsersController < ApplicationController
       render 'instructor'
       
     else
+      @sections = @user.sections
       render 'student'
     end
   end
@@ -31,11 +32,10 @@ class UsersController < ApplicationController
 
   private
 
-    def user_params
-      params.require(:user).permit(:name, :email, :password,
+  def user_params
+    params.require(:user).permit(:name, :email, :password,
                                    :password_confirmation, :is_instructor)
-    end
-
+  end
 
 
 end
