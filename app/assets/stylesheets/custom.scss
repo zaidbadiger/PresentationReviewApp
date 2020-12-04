@@ -54,12 +54,12 @@ button, .btn {
     margin-bottom: 16px;
 }
 
-// a {
-//     color: $main-color;
-//     &:hover {
-//         color: $main-color;
-//     }
-// }
+a {
+    color: $main-color;
+    &:hover {
+        color: $main-color;
+    }
+}
 
 .header {
   margin: 0px;
@@ -70,6 +70,15 @@ button, .btn {
 .card {
   color: $main-color;
   background-color: whitesmoke;
+}
+
+.card .row {
+  display: flex;
+  align-items: center;
+  
+  h1 {
+    margin: 0px;
+  }
 }
 
 .card-title {
