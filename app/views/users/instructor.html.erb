@@ -2,30 +2,30 @@
 
 <h1><%= link_to "Add Course", "/courses/new" %></h1>
 
-<div id="accordion" class="course-box">
+<div class="course-box">
   <% @user.courses.each do |course| %>
-    <div class="card">
-      <div class="card-header" id=<%= "heading#{course.id}"%>>
+    <div class="card course">
+      <div class="card-header" id=<%= "heading#{course.id}" %>>
         <h5 class="mb-0">
-          <button class="btn btn-link" data-toggle="collapse" data-target=<%= "#collapse#{course.id}"%> aria-expanded="true" aria-controls=<%= "collapse#{course.id}"%>>
+          <button class="btn btn-link" type="button" data-toggle="collapse" data-target=<%= "#collapse#{course.id}"%> aria-expanded="false" aria-controls=<%= "collapse#{course.id}" %>>
             <%= "Course: #{course.name}" %>
           </button>
         </h5>
       </div>
-      <div id=<%= "collapse#{course.id}"%> class="collapse" aria-labelledby=<%= "heading#{course.id}"%> data-parent="#accordion">
+      <div id=<%= "collapse#{course.id}"%> class="collapse">
         <div class="card-body">
-          <div id=<%= "accordion#{course.id}"%>>
+          <div class="section-box">
             <% course.sections.each do |section| %>
-              <div class="card">
-                <div class="card-header" id=<%= "heading#{course.id}S#{section.id}"%>>
+              <div class="card section">
+                <div class="card-header" id=<%= "heading#{course.id}S#{section.id}" %>>
                   <h2 class="mb-0">
-                    <button class="btn btn-link" data-toggle="collapse" data-target=<%= "#collapse#{course.id}S#{section.id}"%> aria-expanded="true" aria-controls=<%= "collapse#{course.id}S#{section.id}"%>>
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target=<%= "#collapse#{course.id}S#{section.id}"%> aria-expanded="false" aria-controls=<%= "collapse#{course.id}S#{section.id}"%>>
                       <%= "Section: #{section.section_number}"%>
                     </button>
                     <%= link_to "Add Presentation", "/courses/#{course.id}/sections/#{section.id}/presentations/#{section.id}", class: "btn btn-primary" %>
                   </h2>
                 </div>
-                <div id=<%= "collapse#{course.id}S#{section.id}"%> class="collapse" aria-labelledby=<%= "heading#{course.id}S#{section.id}"%> data-parent=<%= "#accordion#{course.id}"%>>
+                <div id=<%= "collapse#{course.id}S#{section.id}"%> class="collapse">
                   <div class="card-body">
                     <table class="table table-hover">
                       <tbody>
