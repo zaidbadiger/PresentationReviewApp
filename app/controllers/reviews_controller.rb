@@ -8,7 +8,6 @@ class ReviewsController < ApplicationController
 
   def new
     @presentation = Presentation.find(params[:id])
-    @review = Presentation.find(params[:id]).reviews.build
     @user = current_user
   end
 

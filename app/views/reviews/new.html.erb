@@ -9,7 +9,7 @@
             <%= f.range_field :score, :in => 1..10, :step => 1, class: 'form-control' %>
             <%= f.label :comment %>
             <%= f.text_field :comment, class: 'form-control' %>
-            <%= f.submit "Submit review", "/presentations/#{presentation.id}/reviews/new", class: "btn btn-primary" %>
+            <%= f.submit "Submit review", class: "btn btn-primary" %>
         <% end %>
      </div>
   </div>
