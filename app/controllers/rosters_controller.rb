@@ -16,7 +16,7 @@ class RostersController < ApplicationController
   end
 
   def destroy
-    Roster.find(params[:roster_id]).destroy
+    delete_roster(params[:roster_id])
     flash[:success] = 'Roster deleted'
     redirect_to "/sections/#{params[:section_id]}/rosters"
   end

@@ -4,7 +4,7 @@ class SectionsController < ApplicationController
     @section = Course.find(params[:id]).sections.build
   end
 
-  def delete
+  def destroy
     delete_section(params[:section_id])
     flash[:success] = 'Section deleted'
     redirect_to current_user
