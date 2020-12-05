@@ -17,8 +17,8 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
   post   '/courses/new', to: 'courses#create'
   post  '/courses/:id', to: 'sections#create'
-  get '/courses/:id/sections/:id', to:'sections#show'
-  post '/courses/:id/sections/:id', to:'section_student#create'
+  get '/sections/:id/student', to:'sections#show'
+  post '/sections/:id/student', to:'section_student#create'
   # add presentation to section
   get '/courses/:id/sections/:id/presentations/:id', to:'presentations#show'
   post '/courses/:id/sections/:id/presentations/:id', to:'presentations#create'
