@@ -1,18 +1,18 @@
 <header>
   <div class="card container-fluid header">
     <div class="row">
-        <div class="card-title col-md-4">
-          <h1><%= link_to "CATYOU", root_path, id: "logo" %></h1>
-        </div>
-        <div class="col-md-8 float-right header-buttons">
-          <%= puts logged_in? %>
-          <% if logged_in? %>
-            <%= link_to "Log out", logout_path, method: "delete", class: "btn btn-lg btn-primary" %>
-            <%= link_to "Users", "#", {class: "btn btn-lg btn-primary"} %>
-          <% else %>
-            <%= link_to "Log in", login_path, {class: "btn btn-lg btn-primary"} %>
-          <% end %>
-        </div>
+      <div class="card-title col-md-4">
+        <h1><%= link_to "CATYOU", root_path, id: "logo" %></h1>
+      </div>
+      <div class="col-md-8 float-right header-buttons">
+        <%= puts logged_in? %>
+        <% if logged_in? %>
+          <%= link_to "Log out", logout_path, method: "delete", class: "btn btn-lg btn-primary" %>
+          <%= link_to "Users", "#", {class: "btn btn-lg btn-primary"} %>
+        <% else %>
+          <%= link_to "Log in", login_path, {class: "btn btn-lg btn-primary"} %>
+        <% end %>
+      </div>
     </div>
   </div>
 </header>
