@@ -8,7 +8,7 @@
         <%= puts logged_in? %>
         <% if logged_in? %>
           <%= link_to "Log out", logout_path, method: "delete", class: "btn btn-lg btn-primary" %>
-          <%= link_to "Users", "#", {class: "btn btn-lg btn-primary"} %>
+          <%= link_to "Dashboard", current_user, {class: "btn btn-lg btn-primary"} %>
         <% else %>
           <%= link_to "Log in", login_path, {class: "btn btn-lg btn-primary"} %>
         <% end %>
