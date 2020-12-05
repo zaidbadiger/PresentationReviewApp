@@ -9,6 +9,7 @@ gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 gem 'bcrypt', '3.1.13'
 # bootstrap 4 library for styling
 gem 'bootstrap', '>= 4.5'
+gem 'bootstrap-sass'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server
