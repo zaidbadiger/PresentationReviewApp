@@ -25,7 +25,4 @@ class SectionsController < ApplicationController
     def sections_params
       params.permit(:section_number)
     end
-
-  
-
 end

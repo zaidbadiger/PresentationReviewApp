@@ -8,8 +8,10 @@ class PresentersController < ApplicationController
 
   def create
     @presentation_user = User.find_by(email: params[:email])
-    @presenter_instance = Presenter.create(presentation_id: params[:presentation_id], user_id: @presentation_user.id)
-    @presenter_instance.save!
+    if !@presentation_user.blank? then 
+      @presenter_instance = Presenter.create(presentation_id: params[:presentation_id], user_id: @presentation_user.id)
+      @presenter_instance.save!
+    end
     redirect_to "/sections/#{params[:section_id]}/presentations/#{params[:presentation_id]}"
   end
 

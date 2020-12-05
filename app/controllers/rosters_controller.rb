@@ -10,8 +10,10 @@ class RostersController < ApplicationController
 
   def create
     @student = User.find_by(email: params[:email])
-    @roster_instance = Roster.create(section_id: params[:section_id], user_id: @student.id)
-    @roster_instance.save!
+    if !@student.blank? then
+      @roster_instance = Roster.create(section_id: params[:section_id], user_id: @student.id)
+      @roster_instance.save!
+    end
     redirect_to "/sections/#{params[:section_id]}/rosters"
   end
 

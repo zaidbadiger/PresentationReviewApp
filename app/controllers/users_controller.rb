@@ -3,9 +3,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     if @user.is_instructor
-      @val = @user.courses.blank? 
-      render 'instructor'
-      
+      render 'instructor'  
     else
       @sections = @user.sections
       render 'student'
@@ -29,10 +27,8 @@ class UsersController < ApplicationController
 
   private
 
-  def user_params
-    params.require(:user).permit(:name, :email, :password,
-                                   :password_confirmation, :is_instructor)
-  end
-
-
+    def user_params
+      params.require(:user).permit(:name, :email, :password,
+                                    :password_confirmation, :is_instructor)
+    end
 end
