@@ -11,7 +11,9 @@ class ReviewsController < ApplicationController
     @user = current_user
   end
 
-  def show
+  def reviews_for_presentation
+    @presentation = Presentation.find(params[:id])
+    render 'list_reviews_for_presentation'
   end
 
   private

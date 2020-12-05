@@ -28,6 +28,8 @@ Rails.application.routes.draw do
   # add review
   get '/presentations/:id/reviews/new', to: 'reviews#new'
   post '/presentations/:id/reviews/new', to: 'reviews#create'
+  # list reviews for a presentation
+  get '/reviews/:id', to: 'reviews#reviews_for_presentation'
 
   get 'sessions/new'
   
@@ -36,5 +38,6 @@ Rails.application.routes.draw do
   resources :courses
   resources :sections
   resources :presentations
+  resources :reviews
 
 end

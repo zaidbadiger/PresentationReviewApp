@@ -45,7 +45,7 @@
                   <tr>
                     <th scope="row"> <%=presentation.title%> </th>
                     <td>Dec 6th</td>
-                    <td><a class="btn btn-primary" href="#" role="button">View Feedback</a></td>
+                    <td><%= link_to "View Feedback", "/reviews/#{presentation.id}", class: "btn btn-primary" %></td>
                   </tr>
                 <%end%>
               </tbody>
