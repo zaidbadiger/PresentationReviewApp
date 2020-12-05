@@ -10,7 +10,8 @@
         <tr>
           <td><%= user.name %></td>
           <td><%= user.email %></td>
-          <td><%= link_to "Remove", class: "btn btn-primary" %></td>
+          <%roster = Roster.find_by(user_id: user.id, section_id: @section.id)%>
+          <td><%= link_to "Delete", "/sections/#{params[:section_id]}/rosters/#{roster.id}", method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary"%></td>
       <% end %>
     </tbody>
   </table>

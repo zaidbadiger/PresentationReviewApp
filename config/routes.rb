@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get '/sections/:section_id/rosters', to: 'rosters#show'
   get '/sections/:section_id/rosters/add', to: 'rosters#new'
   post '/sections/:section_id/rosters/add', to: 'rosters#create'
+  delete '/sections/:section_id/rosters/:roster_id', to: 'rosters#destroy'
 
   # add presentation to section
   get '/courses/:course_id/sections/:section_id/presentations/new', to: 'presentations#new'
