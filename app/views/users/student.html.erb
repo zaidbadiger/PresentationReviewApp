@@ -1,17 +1,15 @@
- 
-   <div id="accordion" class="course-box">
-    <% @sections.each do |section| %>
-      <% pres_to_review, pres_with_feedback = split_pres(section) %>
-      <div class="card">
-        <div class="card-header" id="headingOne">
+<div class="section-box">
+  <% @sections.each do |section| %>
+    <% pres_to_review, pres_with_feedback = split_pres(section) %>
+    <div class="card section">
+        <div class="card-header" id=<%= "heading#{section.id}" %>>
           <h2 class="mb-0">
-            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-              Course: <%=section.course.name%>
+            <button class="btn btn-link" data-toggle="collapse" data-target=<%= "#collapse#{section.id}" %> aria-expanded="false" aria-controls=<%= "collapse#{section.id}" %>>
+              <%= "Course: #{section.course.name}, Section: #{section.section_number}"%> 
             </button>
           </h2>
-        </div>
-    
-        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+        </div>    
+        <div id=<%= "collapse#{section.id}" %> class="collapse">
           <div class="card-body">
             <table class="table table-hover">
               <thead>
