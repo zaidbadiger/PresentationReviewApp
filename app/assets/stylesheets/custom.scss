@@ -11,6 +11,7 @@ body {
 
 .full-container {
   min-height: 85vh;
+  min-width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -113,11 +114,11 @@ a {
 }
 
 .course-collapse {
-  font-size: 2vw;
+  font-size: 2rem;
 }
 
 .sec-title {
-  font-size: 1.5vw;
+  font-size: 1.5rem;
 }
 
 .section-box {
@@ -133,7 +134,7 @@ a {
 }
 
 .pres-title {
-  font-size: 1vw;
+  font-size: 1remssss;
 }
 
 @media (min-width: 1000px) {

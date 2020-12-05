@@ -1,15 +1,17 @@
-  <div class="container review-box">
-     <div class="card" id="review-card">
-       <div class="card-title">
-         <h3 class="form-title">Review of <%=@presentation.title%>></h3>
-       </div>
+<div class="full-container">
+  <div class="jumbotron jumbotron-fluid form">
+    <div class="card">
+      <div class="card-body">
+        <h3 class="form-title center">Review of <%=@presentation.title%></h3>
+        <hr class="my-4">
         <%= form_with(model: @review, local: true) do |f| %>
-            <%= render 'shared/error_messages' %>
-            <%= f.label :score, "Score = " %>
-            <%= f.range_field :score, :in => 1..10, :step => 1, class: 'form-control' %>
-            <%= f.label :comment %>
-            <%= f.text_field :comment, class: 'form-control' %>
-            <%= f.submit "Submit review", class: "btn btn-primary" %>
+          <%= render 'shared/error_messages' %>
+          <%= f.label :score, "Score = ", class: 'center' %>
+          <%= f.range_field :score, :in => 1..10, :step => 1, class: 'form-control' %>
+          <%= f.text_field :comment, placeholder: 'Comments', class: 'form-control' %>
+          <%= f.submit "Submit review", class: "btn btn-primary" %>
         <% end %>
-     </div>
+      </div>
+    </div>
   </div>
+</div>
