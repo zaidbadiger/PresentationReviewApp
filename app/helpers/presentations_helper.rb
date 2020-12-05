@@ -1,6 +1,6 @@
 module PresentationsHelper
-  include ReviewHelper
-  include PresenterHelper
+  include ReviewsHelper
+  include PresentersHelper
 
   def delete_presentation(presentation_id)
     dead_review_ids = []
