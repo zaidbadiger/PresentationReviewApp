@@ -1,4 +1,5 @@
 class PresentationsController < ApplicationController
+  include PresentationsHelper
 
   def new
     @user = current_user
@@ -12,8 +13,8 @@ class PresentationsController < ApplicationController
 
   def destroy
     @sel_presentation = Presentation.find(params[:id])
-
-    flash[:success] = "Presentation deleted"
+    delete_presentation(@sel_presentation.id)
+    flash[:success] = 'Presentation deleted'
     redirect_to current_user
   end
 
