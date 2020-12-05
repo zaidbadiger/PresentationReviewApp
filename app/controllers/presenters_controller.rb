@@ -1,4 +1,6 @@
 class PresentersController < ApplicationController
+  include PresentersHelper
+
   def new
     @user = current_user
     @presentation = Presentation.find(params[:presentation_id])
@@ -16,9 +18,8 @@ class PresentersController < ApplicationController
   end
 
   def destroy
-    Presenter.find(params[:presenter_id]).destroy
+    delete_presenter(params[:presenter_id])
     flash[:success] = 'Presenter deleted'
     redirect_to "/sections/#{params[:section_id]}/presentations/#{params[:presentation]}"
   end
-
 end
