@@ -29,8 +29,9 @@ Rails.application.routes.draw do
   get '/presentations/:id/reviews/new', to: 'reviews#new'
   post '/presentations/:id/reviews/new', to: 'reviews#create'
   # list reviews for a presentation
-  get '/reviews/:id', to: 'reviews#reviews_for_presentation'
-
+  get '/reviews/:id', to: 'reviews#index'
+  # delete a presentation as an instructor
+  delete '/presentations/:id', to: 'presentations#destroy'
   get 'sessions/new'
   
   

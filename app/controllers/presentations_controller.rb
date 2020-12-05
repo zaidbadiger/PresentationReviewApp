@@ -14,6 +14,12 @@ class PresentationsController < ApplicationController
     redirect_to current_user
   end
 
+  def destroy
+    Presentation.find(params[:id]).destroy
+    flash[:success] = "Presentation deleted"
+    redirect_to current_user
+  end
+
 
 
   private
