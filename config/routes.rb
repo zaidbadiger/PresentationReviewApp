@@ -20,8 +20,8 @@ Rails.application.routes.draw do
   post '/sections/:section_id/rosters/add', to: 'rosters#create'
 
   # add presentation to section
-  get '/course/:course_id/sections/:section_id/presentations/new', to: 'presentations#new'
-  post '/course/:course_id/sections/:section_id/presentations/new', to: 'presentations#create'
+  get '/courses/:course_id/sections/:section_id/presentations/new', to: 'presentations#new'
+  post '/courses/:course_id/sections/:section_id/presentations/new', to: 'presentations#create'
 
   # add student to presentation
   get '/sections/:id/presentations/:id', to: 'presentation_student#new'
