@@ -2,6 +2,9 @@
 <table class="table table-hover">
               <thead>
                 <th scope="col">Review #</th>
+                <% if @user.is_instructor %>
+                  <th scope="col">Student</th>
+                <% end %>
                 <th scope="col">Score</th>
                 <th scope="col">Feedback</th>
               </thead>
@@ -10,6 +13,9 @@
                 <% @presentation.reviews.each do |review| %>
                   <tr>
                     <th scope="row"> <%=i%> <%i=i+1%></th>
+                    <% if @user.is_instructor %>
+                      <td scope="col"><%=review.user.name%></td>
+                    <% end %>
                     <td><%=review.score%></td>
                     <td><%=review.comment%></td>
                   </tr>

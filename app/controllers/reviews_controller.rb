@@ -12,6 +12,7 @@ class ReviewsController < ApplicationController
   end
 
   def index
+    @user = current_user
     @presentation = Presentation.find(params[:id])
   end
 
