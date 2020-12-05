@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'reviews/create'
+  get 'reviews/new'
+  get 'reviews/show'
   get 'presentation_student/new'
   get 'presentation_student/show'
   get 'presentation_student/create'
@@ -22,7 +25,9 @@ Rails.application.routes.draw do
   # add student to presentation
   get '/sections/:id/presentations/:id', to:'presentation_student#new'
   post '/sections/:id/presentations/:id', to:'presentation_student#create'
-
+  # add review
+  get '/presentations/:id/reviews/new', to: 'reviews#new'
+  post '/presentations/:id/reviews/new', to: 'reviews#create'
 
   get 'sessions/new'
   

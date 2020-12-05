@@ -1,0 +1,15 @@
+  <div class="container review-box">
+     <div class="card" id="review-card">
+       <div class="card-title">
+         <h3 class="form-title">Review of <%=@presentation.title%>></h3>
+       </div>
+        <%= form_with(model: @review, local: true) do |f| %>
+            <%= render 'shared/error_messages' %>
+            <%= f.label :score, "Score = " %>
+            <%= f.range_field :score, :in => 1..10, :step => 1, class: 'form-control' %>
+            <%= f.label :comment %>
+            <%= f.text_field :comment, class: 'form-control' %>
+            <%= f.submit "Submit review", "/presentations/#{presentation.id}/reviews/new", class: "btn btn-primary" %>
+        <% end %>
+     </div>
+  </div>

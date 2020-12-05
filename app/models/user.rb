@@ -12,4 +12,5 @@ class User < ApplicationRecord
     has_many :sections, through: :rosters
     has_many :presenters
     has_many :presentations, through: :presenters
+    has_many :reviews
   end
