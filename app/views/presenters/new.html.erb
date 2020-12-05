@@ -1,4 +1,4 @@
-<h1>Add Presenter to Presentation: <%=@presentation.title%></h1>
+<h1>Add Presenter to Presentation: <%=@current_presentation.title%></h1>
 <div class="col-md-6 col-md-offset-3">
     <%= form_with(model: @presentation, local: true) do |f| %>
 
@@ -10,7 +10,7 @@
     <% end %>
   </div>
 <div>
-    <%users = @presentation.users%>
+    <%users = @current_presentation.users%>
     <% if users.blank?%>
     No presenters to display
     <%else%>
@@ -29,8 +29,8 @@
                     <th scope="row"> <%=i%> <%i=i+1%></th>
                     <td scope="row"><%=user.name%></td>
                     <td scope="row"><%=user.email%></td>
-                    <%presenter = Presenter.find_by(user_id: user.id, presentation_id: @presentation.id)%>
-                    <td><%= link_to "Delete", "/sections/#{params[:section_id]}/rosters/#{roster.id}", method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary"%></td>
+                    <%presenter = Presenter.find_by(user_id: user.id, presentation_id: @current_presentation.id)%>
+                    <td><%= link_to "Delete", "/sections/#{params[:section_id]}/presentations/#{@current_presentation.id}/presenters/#{presenter.id}", method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary"%></td>
                   </tr>
                 <%end%>
               </tbody>

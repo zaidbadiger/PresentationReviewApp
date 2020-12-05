@@ -19,7 +19,6 @@ Rails.application.routes.draw do
   get '/sections/:section_id/rosters', to: 'rosters#show'
   get '/sections/:section_id/rosters/add', to: 'rosters#new'
   post '/sections/:section_id/rosters/add', to: 'rosters#create'
-  delete '/sections/:section_id/rosters/:roster_id', to: 'rosters#destroy'
 
   # add presentation to section
   get '/courses/:course_id/sections/:section_id/presentations/new', to: 'presentations#new'
@@ -28,6 +27,7 @@ Rails.application.routes.draw do
   # add student to presentation
   get '/sections/:section_id/presentations/:presentation_id', to: 'presenters#new'
   post '/sections/:section_id/presentations/:presentation_id', to: 'presenters#create'
+  delete '/sections/:section_id/presentations/:presentation_id/presenters/:presenter_id', to: 'presenters#destroy'
 
   # add review
   get '/presentations/:id/reviews/new', to: 'reviews#new'
