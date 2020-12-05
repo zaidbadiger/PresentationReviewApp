@@ -203,6 +203,11 @@ hr.my-4 {
   margin-top: 1rem;
 }
 
+hr.thick-pink-line {
+  border: 1px solid $main-color;
+  border-radius: 5px;
+}
+
 hr.gray-line {
   border: 0;
   height: 0;

@@ -1,16 +1,20 @@
-<div class="section-box">
-  <% @sections.each do |section| %>
-    <% pres_to_review, pres_with_feedback = split_pres(section) %>
-    <div class="card section">
+<div class="full-container">
+  <div class="course-title">
+    <h1>Welcome, Student Name!</h1>
+  </div>
+  <div class=" container section-box">
+    <% @sections.each do |section| %>
+      <% pres_to_review, pres_with_feedback = split_pres(section) %>
+      <div class="card section course">
         <div class="card-header" id=<%= "heading#{section.id}" %>>
           <h2 class="mb-0">
-            <button class="btn btn-link" data-toggle="collapse" data-target=<%= "#collapse#{section.id}" %> aria-expanded="false" aria-controls=<%= "collapse#{section.id}" %>>
+            <a class="btn btn-link sec-title" data-toggle="collapse" data-target=<%= "#collapse#{section.id}" %> aria-expanded="false" aria-controls=<%= "collapse#{section.id}" %>>
               <%= "Course: #{section.course.name}, Section: #{section.section_number}"%> 
-            </button>
+            </a>
           </h2>
         </div>    
         <div id=<%= "collapse#{section.id}" %> class="collapse">
-          <div class="card-body">
+          <div class="card-body presentation">
             <table class="table table-hover">
               <thead>
                 <th scope="col">Presentations to Review</th>
@@ -20,7 +24,7 @@
               <tbody>
                   <% pres_to_review.each do |presentation| %>
                     <tr>
-                      <th scope="row"> <%=presentation.title%> </th>
+                      <td> <%=presentation.title%> </td>
                       <td>Dec 6th</td>
                       <td><%= link_to "Review", "/presentations/#{presentation.id}/reviews/new", class: "btn btn-primary" %></td>
                     </tr>
@@ -28,7 +32,7 @@
               </tbody>
             </table>
             
-            <hr class="my-4">
+            <hr class="thick-pink-line">
             
             <table class="table table-hover">
               <thead>
@@ -46,11 +50,10 @@
                 <%end%>
               </tbody>
             </table>          
-            
           </div>
         </div>
       </div>
     <%end%>
-   </div>
-    
-   
+  </div>
+</div>  
+  
