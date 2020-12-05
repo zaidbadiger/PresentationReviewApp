@@ -40,13 +40,26 @@ button, .btn {
     }
 }
 
+.add-course {
+  background-color: whitesmoke;
+  color: $main-color;
+  
+  &:hover {
+    background-color: $main-color;
+    color: white;
+  }
+}
+
 .btn-link {
     color: $main-color;
     background-color: inherit;
     
+    &:active {
+      border: none;
+    }
     
     &:hover {
-        background-color: inherit;
+      background-color: inherit;
     }
 }
 
@@ -86,6 +99,11 @@ a {
   margin: 0px;
 }
 
+.course {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 15px;
+}
 .course-title {
   text-align: center;
   color: white;

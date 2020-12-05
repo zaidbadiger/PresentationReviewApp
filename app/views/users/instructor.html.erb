@@ -1,13 +1,16 @@
-<h1>Instructor: <%= @user.name %></h1>
+<div class="full-container">
+  
 
-<h1><%= link_to "Add Course", "/courses/new" %></h1>
+<h1 class="course-title">Instructor: <%= @user.name %></h1>
 
-<div class="course-box">
+<h1><%= link_to "Add Course", "/courses/new", class: "btn btn-lg btn-primary add-course"%></h1>
+
+<div class="container course-box">
   <% @user.courses.each do |course| %>
     <div class="card course">
       <div class="card-header" id=<%= "heading#{course.id}" %>>
         <h5 class="mb-0">
-          <button class="btn btn-link" type="button" data-toggle="collapse" data-target=<%= "#collapse#{course.id}"%> aria-expanded="false" aria-controls=<%= "collapse#{course.id}" %>>
+          <button class="btn btn-lg btn-link" type="button" data-toggle="collapse" data-target=<%= "#collapse#{course.id}"%> aria-expanded="false" aria-controls=<%= "collapse#{course.id}" %>>
             <%= "Course: #{course.name}" %>
           </button>
         </h5>
@@ -17,6 +20,7 @@
           <div class="section-box">
             <% course.sections.each do |section| %>
               <div class="card section">
+                
                 <div class="card-header" id=<%= "heading#{course.id}S#{section.id}" %>>
                   <h2 class="mb-0">
                     <button class="btn btn-link" type="button" data-toggle="collapse" data-target=<%= "#collapse#{course.id}S#{section.id}"%> aria-expanded="false" aria-controls=<%= "collapse#{course.id}S#{section.id}"%>>
@@ -25,6 +29,7 @@
                     <%= link_to "Add Presentation", "/courses/#{course.id}/sections/#{section.id}/presentations/#{section.id}", class: "btn btn-primary" %>
                   </h2>
                 </div>
+                
                 <div id=<%= "collapse#{course.id}S#{section.id}"%> class="collapse">
                   <div class="card-body">
                     <table class="table table-hover">
@@ -49,4 +54,5 @@
       </div>
     </div>
   <% end %>
+</div>
 </div>
