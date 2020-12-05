@@ -1,5 +1,6 @@
 class PresentationsController < ApplicationController
   def new
+    @user = current_user
     @presentation = Section.find(params[:section_id]).presentations.build
   end
 
