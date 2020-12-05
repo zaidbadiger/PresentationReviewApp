@@ -2,23 +2,28 @@
   <div class="course-title">
     <h1><%= "Section #{Section.find(params[:section_id]).section_number} Student Roster" %></h1>
   </div>
-  <div id="student-list" class="card container section-box">
-    <table class="table">
-      <thead>
-        <th scope="col">Name</th>
-        <th scope="col">Email</th>
-        <th scope="col"></th>
-      </thead>
-      <tbody>
-        <% @user_list.each do |user| %>
-          <tr>
-            <td><%= user.name %></td>
-            <td><%= user.email %></td>
-            <%roster = Roster.find_by(user_id: user.id, section_id: @section.id)%>
-            <td><%= link_to "Delete", "/sections/#{params[:section_id]}/rosters/#{roster.id}", method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary"%></td>
-        <% end %>
-      </tbody>
-    </table>
-    <%= link_to "Add Student", "/sections/#{params[:section_id]}/rosters/add", class: "btn btn-primary" %>
+  <div id="student-list" class="jumbotron jumbotron-fluid form">
+    <div class="card">
+    
+      <table class="table">
+        <thead>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col"></th>
+        </thead>
+        <tbody>
+          <% @user_list.each do |user| %>
+            <tr>
+              <td><%= user.name %></td>
+              <td><%= user.email %></td>
+              <%roster = Roster.find_by(user_id: user.id, section_id: @section.id)%>
+              <td><%= link_to "Delete", "/sections/#{params[:section_id]}/rosters/#{roster.id}", method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary"%></td>
+          <% end %>
+        </tbody>
+      </table>
+      <%= link_to "Add Student", "/sections/#{params[:section_id]}/rosters/add", class: "btn btn-primary" %>
+      
+    </div>
+    
   </div>
 </div>
