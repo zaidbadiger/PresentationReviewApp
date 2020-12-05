@@ -1,12 +1,8 @@
-require("jquery")
+var slider = document.getElementById("review-slider");
+var output = document.getElementById("output");
+output.innerHTML = slider.value; // Display the default slider value
 
-$(document).ready(function() {
-
-  const $valueSpan = $('.valueSpan2');
-  const $value = $('#customRange11');
-  $valueSpan.html($value.val());
-  $value.on('input change', () => {
-
-    $valueSpan.html($value.val());
-  });
-});
+// Update the current slider value (each time you drag the slider handle)
+slider.oninput = function() {
+  output.innerHTML = this.value;
+}

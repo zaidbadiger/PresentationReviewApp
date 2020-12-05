@@ -7,14 +7,19 @@
         <%= form_with(model: @review, local: true) do |f| %>
           <%= render 'shared/error_messages' %>
           
-          <%= f.label :score, "Score = ", class: 'center' %>
+          <div class = "review-score-box">
+            <%= f.label :score, class: 'review-score', id: 'output' %>
+          </div>
           
-          <%= f.range_field :score, :in => 1..10, :step => 1, class: 'form-control-range' %>
+          <%= f.range_field :score, :in => 1..10, :step => 1, class: 'form-control-range', id: 'review-slider' %>
           
-          <%= f.text_field :comment, placeholder: 'Comments', class: 'form-control' %>
-          <%= f.submit "Submit review", class: "btn btn-primary" %>
+          <%= f.text_area :comment, placeholder: 'Comments', class: 'form-control' %>
+          <%= f.submit "Submit review", class: "btn btn-block btn-primary" %>
         <% end %>
       </div>
     </div>
   </div>
 </div>
+
+<%= javascript_pack_tag 'review_slider.js' %>
+

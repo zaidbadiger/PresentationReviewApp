@@ -34,10 +34,14 @@ button, .btn {
     border: none;
     
     &:hover {
-        background-color: $hover-color;
+      background-color: $hover-color;
     }
     &[type="submit"] {
         margin-top: 1em;
+    }
+    
+    &:active {
+      background-color: $hover-color;
     }
 }
 
@@ -115,6 +119,10 @@ a {
 
 .course-collapse {
   font-size: 2rem;
+}
+
+.mb-0 {
+  margin-top: 10px;
 }
 
 .sec-title {
@@ -223,4 +231,24 @@ hr.gray-line {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
+
+.review-score-box {
+  text-align: center;
+}
+
+.review-score {
+  width: 5rem;
+  height: 5rem;
+  line-height: 5rem;
+  border-radius: 50%;
+  font-size: 3rem;
+  background-color: $main-color;
+  color: white;
+}
+
+#review-slider {
+  background: $main-color;
+  margin: 1rem 0rem 2rem;
+  
 }
