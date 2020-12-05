@@ -14,7 +14,9 @@ Rails.application.routes.draw do
 
   post '/courses/new', to: 'courses#create'
   delete '/courses/:course_id', to: 'courses#destroy'
+
   post '/courses/:id', to: 'sections#create'
+  delete '/sections/:section_id', to: 'sections#delete'
 
   # Roster routes
   get '/sections/:section_id/rosters', to: 'rosters#show'

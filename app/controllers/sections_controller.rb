@@ -4,6 +4,12 @@ class SectionsController < ApplicationController
     @section = Course.find(params[:id]).sections.build
   end
 
+  def delete
+    delete_section(params[:section_id])
+    flash[:success] = 'Section deleted'
+    redirect_to current_user
+  end
+
   def show
     @user = current_user
     render 'show'
