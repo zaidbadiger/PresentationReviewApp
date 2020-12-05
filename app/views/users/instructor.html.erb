@@ -10,9 +10,9 @@
     <div class="card course">
       <div class="card-header" id=<%= "heading#{course.id}" %>>
         <h5 class="mb-0">
-          <button class="btn btn-lg btn-link" type="button" data-toggle="collapse" data-target=<%= "#collapse#{course.id}"%> aria-expanded="false" aria-controls=<%= "collapse#{course.id}" %>>
+          <a class="btn btn-lg btn-link course-collapse" type="button" data-toggle="collapse" data-target=<%= "#collapse#{course.id}"%> aria-expanded="false" aria-controls=<%= "collapse#{course.id}" %>>
             <%= "Course: #{course.name}" %>
-          </button>
+          </a>
         </h5>
       </div>
       <div id=<%= "collapse#{course.id}"%> class="collapse">
@@ -25,41 +25,42 @@
                 <div class="card-header" id=<%= "heading#{course.id}S#{section.id}" %>>
                   <h2 class="mb-0">
                     <div class="left-right">
-                      <button class="btn btn-link" type="button" data-toggle="collapse" data-target=<%= "#collapse#{course.id}S#{section.id}"%> aria-expanded="false" aria-controls=<%= "collapse#{course.id}S#{section.id}"%>>
+                      <a class="btn btn-link sec-title" type="button" data-toggle="collapse" data-target=<%= "#collapse#{course.id}S#{section.id}"%> aria-expanded="false" aria-controls=<%= "collapse#{course.id}S#{section.id}"%>>
                         <%= "Section: #{section.section_number}"%>
-                      </button>
+                      </a>
                       <div>
                         <%= link_to "Add Presentation", "/courses/#{course.id}/sections/#{section.id}/presentations/#{section.id}", class: "btn btn-primary" %>
                         <%= link_to "Add Students", "/sections/#{section.id}/student", class: "btn btn-primary" %>
                       </div>
                     </div>
                   </h2>
-                  <hr class="gray-line">
+                  
                 </div>
                 
                 <div id=<%= "collapse#{course.id}S#{section.id}"%> class="collapse">
-                  <div class="card-body">
-                    <table class="table table-hover">
-                      <tbody>
-                        <% section.presentations.each do |presentation| %>
-                          <tr>
-                            <th scope="row"><%= "Presentation: #{presentation.title}"%></th>
-                            <td><a class="btn btn-primary" href="#" role="button">Edit</a></td>
-                            <td><a class="btn btn-primary" href="#" role="button">Reviews</a></td>
-                            <td><a class="btn btn-primary" href="#" role="button">Delete</a></td>
-                          </tr>
-                        <% end %>
-                      </tbody>
-                    </table>
+                  <div class="card-body presentation">
+                    <% section.presentations.each do |presentation| %>
+                      <div class="left-right">
+                        <p class="pres-title"><%= "Presentation: #{presentation.title}"%></p>
+                        <div>
+                          <a class="btn btn-primary" href="#" role="button">Edit</a>
+                          <a class="btn btn-primary" href="#" role="button">Reviews</a>
+                          <a class="btn btn-primary" href="#" role="button">Delete</a>
+                        </div>
+                      </div>
+                      <hr class="gray-line">
+                    <% end %>
                   </div>
                 </div>
               </div>
+              <hr class="gray-line">
             <% end %>
           </div>
-          <%= link_to "Add Section", "/courses/#{course.id}", class: "btn btn-primary" %>
+          <%= link_to "Add Section", "/courses/#{course.id}", class: "btn btn-primary margin-top" %>
         </div>
       </div>
     </div>
   <% end %>
 </div>
 </div>
+
