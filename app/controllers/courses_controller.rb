@@ -1,7 +1,15 @@
 class CoursesController < ApplicationController
+  include CoursesHelper
+
   def new
     @course = Course.new
     @user = current_user
+  end
+
+  def destroy
+    delete_course(params[:course_id])
+    flash[:success] = 'Course deleted'
+    redirect_to current_user
   end
 
   def show

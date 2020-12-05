@@ -12,8 +12,7 @@ class PresentationsController < ApplicationController
   end
 
   def destroy
-    @sel_presentation = Presentation.find(params[:id])
-    delete_presentation(@sel_presentation.id)
+    delete_presentation(params[:id])
     flash[:success] = 'Presentation deleted'
     redirect_to current_user
   end

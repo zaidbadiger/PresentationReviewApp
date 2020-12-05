@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get '/signup', to: 'users#new'
 
   post '/courses/new', to: 'courses#create'
+  delete '/courses/:course_id', to: 'courses#destroy'
   post '/courses/:id', to: 'sections#create'
 
   # Roster routes

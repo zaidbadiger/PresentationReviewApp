@@ -13,6 +13,7 @@
           <a class="btn btn-lg btn-link course-collapse" type="button" data-toggle="collapse" data-target=<%= "#collapse#{course.id}"%> aria-expanded="false" aria-controls=<%= "collapse#{course.id}" %>>
             <%= "Course: #{course.name}" %>
           </a>
+          <%= link_to "Delete", "/courses/#{course.id}", method: :delete, class: "btn btn-lg btn-primary add-course"%>
         </h5>
       </div>
       <div id=<%= "collapse#{course.id}"%> class="collapse">
