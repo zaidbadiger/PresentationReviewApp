@@ -1,4 +1,4 @@
-class PresentationsController < ApplicationController 
+class PresentationsController < ApplicationController
   def new
     @presentation = Section.find(params[:id]).presentations.build
   end
@@ -7,19 +7,16 @@ class PresentationsController < ApplicationController
     @user = current_user
     render 'new'
   end
-  
+
   def create
     @presentation = Section.find(params[:id]).presentations.build(presentations_params)
     @presentation.save
     redirect_to current_user
   end
 
-
-
   private
-      def presentations_params
-        params.permit(:title)
-      end
 
-
+    def presentations_params
+      params.permit(:title)
+    end
 end
