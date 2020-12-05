@@ -43,7 +43,7 @@
                       <div class="left-right">
                         <p class="pres-title"><%= "Presentation: #{presentation.title}"%></p>
                         <div>
-                          <a class="btn btn-primary" href="#" role="button">Edit</a>
+                          <%= link_to "Edit", "/sections/#{section.id}/presentations/#{presentation.id}", class: "btn btn-primary"%>
                           <%= link_to "Reviews", "/reviews/#{presentation.id}", class: "btn btn-primary"%>
                           <%= link_to "Delete", "/presentations/#{presentation.id}", method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary"%>
                         </div>

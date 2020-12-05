@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  get 'presentation_student/new'
-  get 'presentation_student/show'
-  get 'presentation_student/create'
 
+  get 'presenters/new'
+  get 'presenters/create'
+  get 'presenter/new'
+  get 'presenter/create'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root 'sessions#new'
   get 'sessions/new'
@@ -25,8 +26,8 @@ Rails.application.routes.draw do
   post '/courses/:course_id/sections/:section_id/presentations/new', to: 'presentations#create'
 
   # add student to presentation
-  get '/sections/:id/presentations/:id', to: 'presentation_student#new'
-  post '/sections/:id/presentations/:id', to: 'presentation_student#create'
+  get '/sections/:section_id/presentations/:presentation_id', to: 'presenters#new'
+  post '/sections/:section_id/presentations/:presentation_id', to: 'presenters#create'
 
   # add review
   get '/presentations/:id/reviews/new', to: 'reviews#new'
