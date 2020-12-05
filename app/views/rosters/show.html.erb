@@ -1,0 +1,18 @@
+<div id="student-list" class="card">
+  <table class="table">
+    <thead>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col"></th>
+    </thead>
+    <tbody>
+      <% @user_list.each do |user| %>
+        <tr>
+          <td><%= user.name %></td>
+          <td><%= user.email %></td>
+          <td><%= link_to "Remove", class: "btn btn-primary" %></td>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to "Add Student", "/sections/#{params[:section_id]}/rosters/add", class: "btn btn-primary" %>
+</div>
