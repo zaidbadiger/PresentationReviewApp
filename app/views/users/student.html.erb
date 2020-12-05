@@ -1,14 +1,15 @@
 <div class="full-container">
   <div class="course-title">
-    <h1>Welcome, Student Name!</h1>
+    <h1>Welcome, <%= @user.name %>!</h1>
+    <h3><%= "You are enrolled in #{@sections.size} #{"class".pluralize(@sections.size)}"%></h3>
   </div>
-  <div class=" container section-box">
+  <div class="container section-box">
     <% @sections.each do |section| %>
       <% pres_to_review, pres_with_feedback = split_pres(section) %>
       <div class="card section course">
         <div class="card-header" id=<%= "heading#{section.id}" %>>
           <h2 class="mb-0">
-            <a class="btn btn-link sec-title" data-toggle="collapse" data-target=<%= "#collapse#{section.id}" %> aria-expanded="false" aria-controls=<%= "collapse#{section.id}" %>>
+            <a class="btn btn-link course-collapse" data-toggle="collapse" data-target=<%= "#collapse#{section.id}" %> aria-expanded="false" aria-controls=<%= "collapse#{section.id}" %>>
               <%= "Course: #{section.course.name}, Section: #{section.section_number}"%> 
             </a>
           </h2>
@@ -25,7 +26,7 @@
                     <tr>
                       <td> <%=presentation.title%> </td>
                       <% if Review.where("user_id = ? AND presentation_id = ?", @user.id, presentation.id).size>0 %>
-                        <td><button type="button" class="btn btn-primary" disabled>Review</button></td>
+                        <td><button type="button" class="btn btn-primary" disabled>Completed</button></td>
                       <% else %>                      
                         <td><%= link_to "Review", "/presentations/#{presentation.id}/reviews/new", class: "btn btn-primary" %></td>
                       <% end %>
