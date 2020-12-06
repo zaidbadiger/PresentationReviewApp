@@ -1,9 +1,14 @@
+<% provide(:title, "Create Course") %>
+
+<!--This is the html for creating a course-->
 <div class="full-container">
   <div class="jumbotron jumbotron-fluid form">
     <div class="card">
       <div class="card-body">
         <h4 class="card-title center">Add Course</h4>
         <hr class="my-4">
+        
+        <!--Form to create a course-->
         <%= form_with(model: @course, local: true) do |f| %>
           <%= render 'shared/error_messages' %>
           <%= f.text_field :name, placeholder: 'Name', class: 'form-control' %>

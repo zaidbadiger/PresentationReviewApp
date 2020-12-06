@@ -1,9 +1,14 @@
+<% provide(:title, "Add Student to Roster") %>
+
+<!--This is the html for adding a student to the roster-->
 <div class="full-container">
   <div class="jumbotron jumbotron-fluid form">
     <div class="card">
       <div class="card-body">
         <h4 class="card-title center">Add Student</h4>
         <hr class="my-4">
+        
+        <!--Form to add student to roster-->
         <%= form_with(model: @section, local: true) do |f| %>
 
           <%= render 'shared/error_messages' %>

@@ -1,8 +1,13 @@
+<% provide(:title, "Presenters") %>
+
+<!--This is the html for the list of presenters for a presentation-->
+
 <div class="full-container">
   <div class="course-title">
     <h1>Add Presenter to Presentation: <%=@current_presentation.title%></h1>
   </div>
   
+  <!--Displaying the presenters for the presentation-->
   <div class="jumbotron jumbotron-fluid form card">
     <%users = @current_presentation.users%>
     <% if users.blank?%>
@@ -31,6 +36,7 @@
     <%end%>
   </div>
   
+  <!--Form to add student as a presenter to the presentation-->
   <div class="jumbotron jumbotron-fluid form">
     <div class="card">
       <div class="card-body">
@@ -39,7 +45,7 @@
           <%= render 'shared/error_messages' %>
           
           <%= f.text_field :email, placeholder: 'Email', class: 'form-control' %>
-          <%= f.submit "Add Student", class: "btn btn-block btn-primary" %>
+          <%= f.submit "Add Presenter", class: "btn btn-block btn-primary" %>
         <% end %>
       </div>
     </div>

@@ -1,14 +1,17 @@
+<!--This is the html for the header partial-->
 <header>
   <div class="card container-fluid header">
     <div class="row">
       <div class="card-title col-md-4">
+        <!--Main logo with link to home-->
         <h1><%= link_to "CATYOU", root_path, id: "logo" %></h1>
       </div>
       <div class="col-md-8 float-right header-buttons">
+        <!--Dashboard button for student or instructor (if logged in) and log in/out button -->
         <%= puts logged_in? %>
         <% if logged_in? %>
-          <%= link_to "Log out", logout_path, method: "delete", class: "btn btn-lg btn-primary" %>
           <%= link_to "Dashboard", current_user, {class: "btn btn-lg btn-primary"} %>
+          <%= link_to "Log out", logout_path, method: "delete", class: "btn btn-lg btn-primary" %>
         <% else %>
           <%= link_to "Log in", login_path, {class: "btn btn-lg btn-primary"} %>
         <% end %>

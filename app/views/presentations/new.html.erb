@@ -1,3 +1,6 @@
+<% provide(:title, "Add Presentation") %>
+
+<!--This is the html for adding a presentation to a section-->
 <div class="full-container">
   <div class="container">
     <div class="card-title course-title">
@@ -9,6 +12,8 @@
       <div class="card-body">
         <h4 class="card-title center">Add Presentation</h4>
         <hr class="my-4">
+        
+        <!--Form to add presentation-->
         <%= form_with(model: @presentation, local: true) do |f| %>
           <%= render 'shared/error_messages' %>
           

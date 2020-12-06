@@ -1,3 +1,6 @@
+<% provide(:title, "Create Section") %>
+
+<!--This is the html for creating a section-->
 <div class="full-container">
   <div class="container">
     <div class="card-title course-title">
@@ -9,6 +12,8 @@
       <div class="card-body">
         <h4 class="card-title center">Add Section</h4>
         <hr class="my-4">
+        
+        <!--Form to create section-->
         <%= form_with model: @section, local: true do |f| %>
           <%= f.number_field :section_number, placeholder: 'Section Number', class: 'form-control' %>
           <%= f.submit "Create my section", class: "btn btn-block btn-primary" %>

@@ -1,3 +1,6 @@
+<% provide(:title, "Roster") %>
+
+<!--This is the html for the roster page-->
 <div class="full-container">
   <div class="course-title">
     <h1><%= "Section #{Section.find(params[:section_id]).section_number} Student Roster" %></h1>
@@ -5,6 +8,7 @@
   <div id="student-list" class="jumbotron jumbotron-fluid form">
     <div class="card">
     
+      <!--Display roster in tabular format-->
       <table class="table">
         <thead>
           <th scope="col">Name</th>
