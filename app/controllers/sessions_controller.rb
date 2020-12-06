@@ -1,7 +1,15 @@
+#=begin
+# Controller responsible for handling interactions
+# on the main login and sign up pages
+#=end
 class SessionsController < ApplicationController
+
+  # links with the login page
 
   def new
   end
+
+  # allows user to sign in
 
   def create
     user = User.find_by(email: params[:session][:email].downcase)
@@ -17,6 +25,8 @@ class SessionsController < ApplicationController
     end
   end
 
+  #allows user to sign out
+  
   def destroy
     log_out
     redirect_to root_url

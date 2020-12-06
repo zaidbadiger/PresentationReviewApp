@@ -19,11 +19,13 @@ class UsersController < ApplicationController
     end
   end
 
-  # instantiate 
-  
+  # instantiate new User object
+
   def new
     @user = User.new
   end
+
+  # create a new user
 
   def create
     @user = User.new(user_params)
@@ -37,7 +39,9 @@ class UsersController < ApplicationController
 
   private
 
-    def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation, :is_instructor)
-    end
+  # return parameters from url post request for building user instance
+
+  def user_params
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :is_instructor)
+  end
 end
