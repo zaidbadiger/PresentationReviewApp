@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     if @user.is_instructor
-      render 'instructor'  
+      render 'instructor'
     else
       @sections = @user.sections
       render 'student'
