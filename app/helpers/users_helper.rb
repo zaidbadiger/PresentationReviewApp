@@ -1,4 +1,7 @@
 module UsersHelper
+  #=begin returns array of presentations that a user
+  # needs to leave review for and an array of presentations
+  #=end that a user can view feedback for
   def split_pres(section)
     need_to_review = []
     view_feedback = []

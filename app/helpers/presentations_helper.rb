@@ -2,6 +2,7 @@ module PresentationsHelper
   include ReviewsHelper
   include PresentersHelper
 
+  # deletes a presentation object and corresponding reviews and presenters
   def delete_presentation(presentation_id)
     dead_review_ids = []
     dead_presenter_ids = []

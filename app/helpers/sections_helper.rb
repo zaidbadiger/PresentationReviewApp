@@ -2,6 +2,7 @@ module SectionsHelper
   include PresentationsHelper
   include RostersHelper
 
+  # deletes a section and all presentations and roster objects that depend on it
   def delete_section(section_id)
     dead_presentations = []
     dead_rosters = []
