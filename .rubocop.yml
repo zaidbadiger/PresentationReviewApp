@@ -36,3 +36,16 @@ Style/PerlBackrefs:
 Style/RedundantBegin:
   Exclude:
     - 'bin/yarn'
+Style/StderrPuts:
+  Exclude:
+    - 'bin/yarn'
+Style/StringLiterals:
+  Exclude:
+    - 'bin/bundle'
+    - 'bin/webpack'
+    - 'bin/webpack-dev-server'
+    - 'bin/yarn'
+    - 'config/environments/production.rb'
+    - 'config/puma.rb'
+    - 'config/spring.rb'
+    - 'db/schema.rb'
