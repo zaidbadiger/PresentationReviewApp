@@ -32,6 +32,9 @@ Layout/EmptyLineAfterGuardClause:
 Layout/EmptyLinesAroundBlockBody:
   Exclude:
     - 'db/schema.rb'
+Layout/LineLength:
+  Exclude:
+    - 'bin/bundle'
 Layout/MultilineOperationIndentation:
   Exclude:
     - 'bin/bundle'

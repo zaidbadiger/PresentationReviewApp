@@ -27,7 +27,9 @@ class RostersController < ApplicationController
     # else assign student to section and record in roster instance
     #=end
     unless @student.nil?
-      Roster.create(section_id: sect_id, user_id: stud_id).save! if Roster.find_by(section_id: sect_id, user_id: stud_id).nil?
+      if Roster.find_by(section_id: sect_id, user_id: stud_id).nil?
+        Roster.create(section_id: sect_id, user_id: stud_id).save!
+      end
     end
     redirect_to "/sections/#{sect_id}/rosters"
   end

@@ -1,10 +1,17 @@
-User.create(name: 'Paul Sivilotti', is_instructor: true, email: 'sivilotti@osu.edu', password: 'asdfgh', password_confirmation: 'asdfgh')
-User.create(name: 'Simon Kirksey', is_instructor: false, email: 'kirksey@osu.edu', password: 'asdfgh', password_confirmation: 'asdfgh')
-User.create(name: 'Antoni Rempala', is_instructor: false, email: 'rempala@osu.edu', password: 'asdfgh', password_confirmation: 'asdfgh')
-User.create(name: 'Kunal Arya', is_instructor: false, email: 'arya@osu.edu', password: 'asdfgh', password_confirmation: 'asdfgh')
-User.create(name: 'Sam Cohen', is_instructor: false, email: 'cohen@osu.edu', password: 'asdfgh', password_confirmation: 'asdfgh')
-User.create(name: 'Zaid Badiger', is_instructor: false, email: 'badiger@osu.edu', password: 'asdfgh', password_confirmation: 'asdfgh')
-User.create(name: 'John Smith', is_instructor: false, email: 'smith@osu.edu', password: 'asdfgh', password_confirmation: 'asdfgh')
+User.create(name: 'Paul Sivilotti', is_instructor: true, email: 'sivilotti@osu.edu', password: 'asdfgh',
+            password_confirmation: 'asdfgh')
+User.create(name: 'Simon Kirksey', is_instructor: false, email: 'kirksey@osu.edu', password: 'asdfgh',
+            password_confirmation: 'asdfgh')
+User.create(name: 'Antoni Rempala', is_instructor: false, email: 'rempala@osu.edu', password: 'asdfgh',
+            password_confirmation: 'asdfgh')
+User.create(name: 'Kunal Arya', is_instructor: false, email: 'arya@osu.edu', password: 'asdfgh',
+            password_confirmation: 'asdfgh')
+User.create(name: 'Sam Cohen', is_instructor: false, email: 'cohen@osu.edu', password: 'asdfgh',
+            password_confirmation: 'asdfgh')
+User.create(name: 'Zaid Badiger', is_instructor: false, email: 'badiger@osu.edu', password: 'asdfgh',
+            password_confirmation: 'asdfgh')
+User.create(name: 'John Smith', is_instructor: false, email: 'smith@osu.edu', password: 'asdfgh',
+            password_confirmation: 'asdfgh')
 
 Course.create(name: '3901: Web Applications', user_id: 1)
 

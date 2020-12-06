@@ -29,7 +29,9 @@ class PresentersController < ApplicationController
     # Else find User and assign to presentation instance
     #=end
     unless @presentation_user.nil? || Roster.find_by(section_id: sect_id, user_id: user_id).nil?
-      Presenter.create(presentation_id: pres_id, user_id: user_id).save! if Presenter.find_by(presentation_id: pres_id, user_id: user_id).nil?
+      if Presenter.find_by(presentation_id: pres_id, user_id: user_id).nil?
+        Presenter.create(presentation_id: pres_id, user_id: user_id).save!
+      end
     end
     redirect_to "/sections/#{sect_id}/presentations/#{pres_id}"
   end
