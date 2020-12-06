@@ -12,5 +12,4 @@ module SectionsHelper
     dead_rosters.each { |id| delete_roster(id) }
     curr_section.destroy
   end
-    
 end

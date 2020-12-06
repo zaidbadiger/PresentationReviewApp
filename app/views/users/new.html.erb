@@ -10,12 +10,8 @@
         
         <!--Form for user to sign up-->
         <%= form_with(model: @user, local: true) do |f| %>
-        
-          <%= puts @user%>
-          <%= puts "here" %>
-    
           <%= render 'shared/error_messages' %>
-          
+
           <div class="form-group">
             <%= f.text_field :name, placeholder: 'Name', class: 'form-control' %>
           </div>
