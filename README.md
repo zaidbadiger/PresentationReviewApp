@@ -28,7 +28,7 @@ Next, migrate the database:
 $ rails db:migrate
 ```
 
-Next we want to seed our data base with some sample data:
+Next we want to seed our database with some sample data (Optional if you want to use preloaded data):
 
 ```
 $ rails db:reset
@@ -50,9 +50,7 @@ $ rails server
 
 Now that you're all installed and ready to go, it's time to use this app! 
 
-Keep in mind the application already comes with several user accounts to enchance the 
-visual aspect of the functionality.
-
+If you ran the seed file, your application will already come prepopulated with several user accounts.
 
 ### Sign Up
 The first thing you'll want to do for this app is sign up! You will need your name, email address, and a password to create an account. Next, you'll need to select whether you are a student or an instructor. Clicking the "Sign Up" button will create a user account and direct you to the Log In page.
@@ -64,7 +62,7 @@ From now on, this guide will cover two different user types: the student and the
 
 ### Student Use
 
-To get the full experience we recommend using one of the default student accounts.These accounts already come prepopulated with data to enchance user experience. The following student included are below: 
+To get the full experience we recommend using one of the default student accounts. These accounts already come prepopulated with data to enchance user experience. The following student included are below: 
 
 name: 'Simon Kirksey', email: 'kirksey@osu.edu', password: 'asdfgh', 
 name: 'Antoni Rempala',  email: 'rempala@osu.edu', password: 'asdfgh', 
