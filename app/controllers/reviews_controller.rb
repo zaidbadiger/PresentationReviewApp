@@ -2,7 +2,6 @@
 # Controller responsible for handeling Reviews for Presentation from User model
 #=end
 class ReviewsController < ApplicationController
-
   # instantiate instance for presentation and current user
 
   def new

@@ -13,6 +13,9 @@ Layout/ArgumentAlignment:
 Layout/EmptyLineAfterGuardClause:
   Exclude:
     - 'bin/bundle'
+Layout/EmptyLinesAroundBlockBody:
+  Exclude:
+    - 'db/schema.rb'
 Layout/MultilineOperationIndentation:
   Exclude:
     - 'bin/bundle'
