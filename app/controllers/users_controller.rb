@@ -12,7 +12,6 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
-    @courses = Course.new
   end
 
   def create
