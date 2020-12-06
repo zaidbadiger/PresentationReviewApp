@@ -15,7 +15,7 @@
       <div class="card section course">
         <div class="card-header" id=<%= "heading#{section.id}" %>>
           <h2 class="mb-0">
-            <a class="btn btn-link course-collapse" data-toggle="collapse" data-target=<%= "#collapse#{section.id}" %> aria-expanded="false" aria-controls=<%= "collapse#{section.id}" %>>
+            <a href="#" class="btn btn-link course-collapse" data-toggle="collapse" data-target=<%= "#collapse#{section.id}" %> aria-expanded="false" aria-controls=<%= "collapse#{section.id}" %>>
               <%= "Course: #{section.course.name}, Section: #{section.section_number}"%> 
             </a>
           </h2>
@@ -26,20 +26,22 @@
             <!--Presentation details-->
             <table class="table table-hover">
               <thead>
-                <th scope="col">Presentations to Review</th>
-                <th scope="col">Action</th>
+                <tr>
+                  <th scope="col">Presentations to Review</th>
+                  <th scope="col">Action</th>
+                </tr>
               </thead>
               <tbody>
-                  <% pres_to_review.each do |presentation| %>
-                    <tr>
-                      <td> <%=presentation.title%> </td>
-                      <% if Review.where("user_id = ? AND presentation_id = ?", @user.id, presentation.id).size>0 %>
-                        <td><button type="button" class="btn btn-primary" disabled>Completed</button></td>
-                      <% else %>                      
-                        <td><%= link_to "Review", "/presentations/#{presentation.id}/reviews/new", class: "btn btn-primary" %></td>
-                      <% end %>
-                    </tr>
-                  <%end%>
+                <% pres_to_review.each do |presentation| %>
+                  <tr>
+                    <td> <%=presentation.title%> </td>
+                    <% if Review.where("user_id = ? AND presentation_id = ?", @user.id, presentation.id).size>0 %>
+                      <td><button type="button" class="btn btn-primary" disabled>Completed</button></td>
+                    <% else %>                      
+                      <td><%= link_to "Review", "/presentations/#{presentation.id}/reviews/new", class: "btn btn-primary" %></td>
+                    <% end %>
+                  </tr>
+                <%end%>
               </tbody>
             </table>
             
@@ -47,8 +49,10 @@
             
             <table class="table table-hover">
               <thead>
-                <th scope="col">Your Presentations</th>
-                <th scope="col">Feedback</th>
+                <tr>
+                  <th scope="col">Your Presentations</th>
+                  <th scope="col">Feedback</th>
+                </tr>
               </thead>
               <tbody>
                 <% pres_with_feedback.each do |presentation| %>

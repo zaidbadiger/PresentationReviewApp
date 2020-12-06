@@ -13,14 +13,14 @@
     <% @user.courses.each do |course| %>
       <div class="card course">
         <div class="card-header" id=<%= "heading#{course.id}" %>>
-          <h5 class="mb-0">
-            <div class="left-right">
-              <a class="btn btn-lg btn-link course-collapse" type="button" data-toggle="collapse" data-target=<%= "#collapse#{course.id}"%> aria-expanded="false" aria-controls=<%= "collapse#{course.id}" %>>
+          <strong class="mb-0">
+            <span class="left-right">
+              <a href="#" class="btn btn-lg btn-link course-collapse" data-toggle="collapse" data-target=<%= "#collapse#{course.id}"%> aria-expanded="false" aria-controls=<%= "collapse#{course.id}" %>>
                 <%= "Course: #{course.name}" %>
               </a>
               <%= link_to "Delete", "/courses/#{course.id}", method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-lg btn-primary"%>
-            </div>
-          </h5>
+            </span>
+          </strong>
         </div>
         <div id=<%= "collapse#{course.id}"%> class="collapse">
           <hr class="my-4">
@@ -32,16 +32,16 @@
                 <div class="card section">
                   <div class="card-header" id=<%= "heading#{course.id}S#{section.id}" %>>
                     <h2 class="mb-0">
-                      <div class="left-right">
-                        <a class="btn btn-link sec-title" type="button" data-toggle="collapse" data-target=<%= "#collapse#{course.id}S#{section.id}"%> aria-expanded="false" aria-controls=<%= "collapse#{course.id}S#{section.id}"%>>
+                      <span class="left-right">
+                        <a href="#" class="btn btn-link sec-title" data-toggle="collapse" data-target=<%= "#collapse#{course.id}S#{section.id}"%> aria-expanded="false" aria-controls=<%= "collapse#{course.id}S#{section.id}"%>>
                           <%= "Section: #{section.section_number}"%>
                         </a>
-                        <div>
+                        <span>
                           <%= link_to "Add Presentation", "/courses/#{course.id}/sections/#{section.id}/presentations/new", class: "btn btn-primary" %>
                           <%= link_to "Roster", "/sections/#{section.id}/rosters", class: "btn btn-primary" %>
                           <%= link_to "Delete", "/sections/#{section.id}", method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary" %>
-                        </div>
-                      </div>
+                        </span>
+                      </span>
                     </h2>
                     
                   </div>
@@ -52,14 +52,14 @@
                       <!--Displays the presentations with options-->
                       <% section.presentations.each do |presentation| %>
                         <h5 class="mb-0">
-                        <div class="left-right">
-                          <p class="pres-title"><%= "Presentation: #{presentation.title}"%></p>
-                          <div>
-                            <%= link_to "Presenters", "/sections/#{section.id}/presentations/#{presentation.id}", class: "btn btn-primary"%>
-                            <%= link_to "Reviews", "/reviews/#{presentation.id}", class: "btn btn-primary"%>
-                            <%= link_to "Delete", "/presentations/#{presentation.id}", method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary"%>
-                          </div>
-                        </div>
+                          <span class="left-right">
+                            <em class="pres-title"><%= "Presentation: #{presentation.title}"%></em>
+                            <span>
+                              <%= link_to "Presenters", "/sections/#{section.id}/presentations/#{presentation.id}", class: "btn btn-primary"%>
+                              <%= link_to "Reviews", "/reviews/#{presentation.id}", class: "btn btn-primary"%>
+                              <%= link_to "Delete", "/presentations/#{presentation.id}", method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary"%>
+                            </span>
+                          </span>
                         </h5>
                       <% end %>
                     </div>

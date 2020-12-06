@@ -6,13 +6,15 @@
   <div  class="jumbotron jumbotron-fluid form card">
     <table class="table table-hover">
       <thead>
+        <tr>
         <% if @user.is_instructor %>
           <th scope="col">Student</th>
         <% else %>
           <th scope="col">Review #</th>
         <% end %>
-        <th scope="col">Score</th>
-        <th scope="col">Feedback</th>
+          <th scope="col">Score</th>
+          <th scope="col">Feedback</th>
+        </tr>
       </thead>
       <tbody>
         <% i=1 %>
@@ -20,7 +22,7 @@
         <% @presentation.reviews.each do |review| %>
           <tr>
             <% if @user.is_instructor %>
-              <td scope="col"><%=review.user.name%></td>
+              <td><%=review.user.name%></td>
             <% else %>
               <th scope="row"> <%= i %> <% i += 1 %></th>
             <% end %>
