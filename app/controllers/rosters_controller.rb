@@ -23,7 +23,7 @@ class RostersController < ApplicationController
 
     #=begin
     # being if the selected student does not exist do not add and redirect back.
-    # else assign student to section and record in roster instance 
+    # else assign student to section and record in roster instance
     #=end
     unless @student.nil?
       if Roster.find_by(section_id: params[:section_id], user_id: @student.id).nil?

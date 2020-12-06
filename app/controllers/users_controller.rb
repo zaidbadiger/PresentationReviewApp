@@ -3,7 +3,6 @@
 # views rendering data from users table for the user
 #=end
 class UsersController < ApplicationController
-  
   #=begin
   # instantiate user to determine whether to display instructor dashboard
   # or to display student dasboard
