@@ -1,5 +1,3 @@
-# frozen_string_literal: false
-
 #=begin
 # Controller responsible for handeling interactions between
 # views rendering data from Courses table and user
