@@ -135,14 +135,15 @@ a {
 }
 
 .presentation {
-  border: 1px solid $main-color;
+  border: 2px solid lightgray;
   padding: 1rem;
   border-radius: 15px;
 }
 
-.pres-title {
-  font-size: 1remssss;
+p {
+  margin: 0px;
 }
+
 
 @media (min-width: 1000px) {
   .form {

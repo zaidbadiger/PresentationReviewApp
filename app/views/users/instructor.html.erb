@@ -41,6 +41,7 @@
                 <div id=<%= "collapse#{course.id}S#{section.id}"%> class="collapse">
                   <div class="card-body presentation">
                     <% section.presentations.each do |presentation| %>
+                      <h5 class="mb-0">
                       <div class="left-right">
                         <p class="pres-title"><%= "Presentation: #{presentation.title}"%></p>
                         <div>
@@ -49,12 +50,11 @@
                           <%= link_to "Delete", "/presentations/#{presentation.id}", method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary"%>
                         </div>
                       </div>
-                      <hr class="gray-line">
+                      </h5>
                     <% end %>
                   </div>
                 </div>
               </div>
-              <hr class="gray-line">
             <% end %>
           </div>
           <%= link_to "Add Section", "/courses/#{course.id}", class: "btn btn-primary margin-top" %>
