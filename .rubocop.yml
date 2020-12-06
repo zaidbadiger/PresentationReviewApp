@@ -1,0 +1,24 @@
+inherit_from: .rubocop_todo.yml
+
+# Alphabetizing auto-generated Gemfile seems excessive
+Bundler/OrderedGems:
+  Exclude:
+    - 'Gemfile'
+
+# We aren't formatting auto-generated files
+Layout/ArgumentAlignment:
+  Exclude:
+    - 'bin/webpack'
+    - 'bin/webpack-dev-server'
+Layout/EmptyLineAfterGuardClause:
+  Exclude:
+    - 'bin/bundle'
+Layout/MultilineOperationIndentation:
+  Exclude:
+    - 'bin/bundle'
+Style/PerlBackrefs:
+  Exclude:
+    - 'bin/bundle'
+Style/RedundantBegin:
+  Exclude:
+    - 'bin/yarn'
