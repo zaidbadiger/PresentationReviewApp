@@ -16,6 +16,14 @@ Layout/EmptyLineAfterGuardClause:
 Layout/MultilineOperationIndentation:
   Exclude:
     - 'bin/bundle'
+Style/ExpandPathArguments:
+  Exclude:
+    - 'bin/bundle'
+    - 'bin/rails'
+    - 'bin/rake'
+Style/IfUnlessModifier:
+  Exclude:
+    - 'bin/bundle'
 Style/PerlBackrefs:
   Exclude:
     - 'bin/bundle'

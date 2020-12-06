@@ -8,11 +8,4 @@ module CoursesHelper
     dead_sections.each { |id| delete_section(id) }
     curr_course.destroy
   end
-
-  # Returns the current logged-in user (if any).
-  def current_course
-    if course[params[:id]]
-      @current_course ||= Course.find_by()
-    end
-  end
 end
