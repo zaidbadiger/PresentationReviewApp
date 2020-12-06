@@ -5,6 +5,12 @@ Bundler/OrderedGems:
   Exclude:
     - 'Gemfile'
 
+# Keeps limitation on method length without being too strict
+Metrics/MethodLength:
+  Max: 12
+  Exclude:
+    - 'bin/bundle'
+
 # Compact Style is required for functionality
 Style/ClassAndModuleChildren:
   Exclude:
@@ -35,6 +41,9 @@ Metrics/BlockLength:
 Metrics/CyclomaticComplexity:
   Exclude:
     - 'bin/bundle'
+Metrics/PerceivedComplexity:
+  Exclude:
+    - 'bin/bundle'
 Style/ExpandPathArguments:
   Exclude:
     - 'bin/bundle'
@@ -52,6 +61,9 @@ Style/PerlBackrefs:
 Style/RedundantBegin:
   Exclude:
     - 'bin/yarn'
+Style/SpecialGlobalVars:
+  Exclude:
+    - 'bin/bundle'
 Style/StderrPuts:
   Exclude:
     - 'bin/yarn'

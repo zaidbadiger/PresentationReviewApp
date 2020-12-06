@@ -3,8 +3,7 @@ module UsersHelper
     need_to_review = []
     view_feedback = []
     section.presentations.each do |presentation|
-      presenters = presentation.users
-      presenter_ids = presenters.map(&:id)
+      presenter_ids = presentation.users.map(&:id)
       if presenter_ids.include?(@user.id)
         view_feedback << presentation
       else
