@@ -32,6 +32,9 @@ Layout/MultilineOperationIndentation:
 Metrics/BlockLength:
   Exclude:
     - 'db/schema.rb'
+Metrics/CyclomaticComplexity:
+  Exclude:
+    - 'bin/bundle'
 Style/ExpandPathArguments:
   Exclude:
     - 'bin/bundle'
