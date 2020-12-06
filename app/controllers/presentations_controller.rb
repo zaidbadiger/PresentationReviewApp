@@ -1,5 +1,5 @@
 #=begin
-# Controller responsible for handeling interactions between
+# Controller responsible for handling interactions between
 # views rendering data from Presentations table for the user
 #=end
 class PresentationsController < ApplicationController
@@ -7,7 +7,7 @@ class PresentationsController < ApplicationController
 
   include PresentationsHelper
 
-  # instantiant local user object to point to  user currently logged in
+  # instantiate local user object to point to  user currently logged in
 
   def new
     @user = current_user

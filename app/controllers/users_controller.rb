@@ -1,4 +1,13 @@
+#=begin
+# Controller responsible for handling interactions between
+# views rendering data from users table for the user
+#=end
 class UsersController < ApplicationController
+  
+  #=begin
+  # instantiate user to determine whether to display instructor dashboard
+  # or to display student dasboard
+  #=end
 
   def show
     @user = User.find(params[:id])
@@ -10,6 +19,8 @@ class UsersController < ApplicationController
     end
   end
 
+  # instantiate 
+  
   def new
     @user = User.new
   end
