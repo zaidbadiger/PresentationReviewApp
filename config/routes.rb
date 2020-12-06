@@ -1,3 +1,5 @@
+# To keep routes together
+# rubocop:disable Metrics/BlockLength
 Rails.application.routes.draw do
   get 'presenters/new'
   get 'presenters/create'
@@ -48,3 +50,4 @@ Rails.application.routes.draw do
   resources :presentations
   resources :reviews
 end
+# rubocop:enable Metrics/BlockLength

@@ -5,6 +5,16 @@ Bundler/OrderedGems:
   Exclude:
     - 'Gemfile'
 
+# Compact Style is required for functionality
+Style/ClassAndModuleChildren:
+  Exclude:
+    - 'test/channels/application_cable/connection_test.rb'
+    - 'test/test_helper.rb'
+
+# Frozen String Literal Comment is unneccessary
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
 # We aren't formatting auto-generated files
 Layout/ArgumentAlignment:
   Exclude:
@@ -19,6 +29,9 @@ Layout/EmptyLinesAroundBlockBody:
 Layout/MultilineOperationIndentation:
   Exclude:
     - 'bin/bundle'
+Metrics/BlockLength:
+  Exclude:
+    - 'db/schema.rb'
 Style/ExpandPathArguments:
   Exclude:
     - 'bin/bundle'
