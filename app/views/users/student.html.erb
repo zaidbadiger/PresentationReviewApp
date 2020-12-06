@@ -1,9 +1,15 @@
+<% provide(:title, 'Student Dashboard') %>
+
+<!--This is the html page for the student dashboard-->
 <div class="full-container">
   <div class="course-title">
+    <!-- Welcoming the user and displaying the number of courses they are enrolled in-->
     <h1>Welcome, <%= @user.name %>!</h1>
     <h3><%= "You are enrolled in #{@sections.size} #{"class".pluralize(@sections.size)}"%></h3>
   </div>
   <div class="container section-box">
+    
+    <!--Display each section the user is enrolled in..Clicking the section expands information on the presentations-->
     <% @sections.each do |section| %>
       <% pres_to_review, pres_with_feedback = split_pres(section) %>
       <div class="card section course">
@@ -16,6 +22,8 @@
         </div>    
         <div id=<%= "collapse#{section.id}" %> class="collapse">
           <div class="card-body presentation">
+            
+            <!--Presentation details-->
             <table class="table table-hover">
               <thead>
                 <th scope="col">Presentations to Review</th>
