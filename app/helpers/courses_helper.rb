@@ -1,3 +1,4 @@
+# helper methods for Courses controller
 module CoursesHelper
   include SectionsHelper
 

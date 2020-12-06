@@ -1,3 +1,4 @@
+# helper methods for Presentations controller
 module PresentationsHelper
   include ReviewsHelper
   include PresentersHelper

@@ -1,3 +1,4 @@
+# helper methods for Sessions controller
 module SessionsHelper
   # Logs in the given user.
   def log_in(user)

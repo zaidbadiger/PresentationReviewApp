@@ -1,3 +1,4 @@
+# helper methods for Presenters controller
 module PresentersHelper
   # deletes a presenter object
   def delete_presenter(presenter_id)

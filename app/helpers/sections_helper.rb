@@ -1,3 +1,4 @@
+# helper methods for Sections controller 
 module SectionsHelper
   include PresentationsHelper
   include RostersHelper

@@ -1,3 +1,4 @@
+# helper methods for User controller
 module UsersHelper
   #=begin returns array of presentations that a user
   # needs to leave review for and an array of presentations
