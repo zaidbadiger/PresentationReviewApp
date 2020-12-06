@@ -1,3 +1,6 @@
+# =begin
+#   Controller to handle major interactions with Section model
+# =end
 class SectionsController < ApplicationController
   def new
     @section = Course.find(params[:id]).sections.build

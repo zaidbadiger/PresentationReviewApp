@@ -51,6 +51,8 @@ Style/Documentation:
   Exclude:
     - 'db/migrate/*'
     - 'test/**/*'
+    - 'config/application.rb'
+    - 'app/models/*.rb'
 Style/ExpandPathArguments:
   Exclude:
     - 'bin/bundle'
