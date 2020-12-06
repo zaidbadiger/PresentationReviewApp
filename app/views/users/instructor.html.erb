@@ -13,7 +13,7 @@
           <a class="btn btn-lg btn-link course-collapse" type="button" data-toggle="collapse" data-target=<%= "#collapse#{course.id}"%> aria-expanded="false" aria-controls=<%= "collapse#{course.id}" %>>
             <%= "Course: #{course.name}" %>
           </a>
-          <%= link_to "Delete", "/courses/#{course.id}", method: :delete, class: "btn btn-primary"%>
+          <%= link_to "Delete", "/courses/#{course.id}", method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary"%>
         </h5>
       </div>
       <div id=<%= "collapse#{course.id}"%> class="collapse">
@@ -31,7 +31,7 @@
                       <div>
                         <%= link_to "Add Presentation", "/courses/#{course.id}/sections/#{section.id}/presentations/new", class: "btn btn-primary" %>
                         <%= link_to "Roster", "/sections/#{section.id}/rosters", class: "btn btn-primary" %>
-                        <%= link_to "Delete", "/sections/#{section.id}", method: :delete, class: "btn btn-primary" %>
+                        <%= link_to "Delete", "/sections/#{section.id}", method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-primary" %>
                       </div>
                     </div>
                   </h2>
