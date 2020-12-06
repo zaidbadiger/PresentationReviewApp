@@ -47,6 +47,10 @@ Metrics/CyclomaticComplexity:
 Metrics/PerceivedComplexity:
   Exclude:
     - 'bin/bundle'
+Style/Documentation:
+  Exclude:
+    - 'db/migrate/*'
+    - 'test/**/*'
 Style/ExpandPathArguments:
   Exclude:
     - 'bin/bundle'

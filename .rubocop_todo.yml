@@ -7,5 +7,4 @@
 # versions of RuboCop, may require this file to be generated again.
 
 # Offense count: 29
-Style/Documentation:
-  Enabled: false
+
