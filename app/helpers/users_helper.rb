@@ -4,7 +4,7 @@ module UsersHelper
     view_feedback = []
     section.presentations.each do |presentation|
       presenters = presentation.users
-      presenter_ids = presenters.map('&:id')
+      presenter_ids = presenters.map(&:id)
       if presenter_ids.include?(@user.id)
         view_feedback << presentation
       else
