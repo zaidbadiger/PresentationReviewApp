@@ -10,12 +10,11 @@ class RostersController < ApplicationController
 
   def create
     @student = User.find_by(email: params[:email])
-    if @student.any?
-      if Roster.find_by(section_id: params[:section_id], user_id: @student.id).any?
-        redirect_to "/sections/#{params[:section_id]}/rosters"
+    unless @student.nil?
+      if Roster.find_by(section_id: params[:section_id], user_id: @student.id).nil?
+        @roster_instance = Roster.create(section_id: params[:section_id], user_id: @student.id)
+        @roster_instance.save!
       end
-      @roster_instance = Roster.create(section_id: params[:section_id], user_id: @student.id)
-      @roster_instance.save!
     end
     redirect_to "/sections/#{params[:section_id]}/rosters"
   end
